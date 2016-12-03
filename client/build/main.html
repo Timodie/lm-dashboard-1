@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Liberty Mutual Dashboard | Main</title>
+
+    <!-- Bootstrap's CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/mainpage.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Main Page</h1>
+      </div>
+    <ul class="nav nav-pills nav-stacked col-md-2">
+      <li class="active"><a href="#tab_a" data-toggle="pill">View Data</a></li>
+      <li><a href="#tab_b" data-toggle="pill">Add</a></li>
+      <li><a href="#tab_c" data-toggle="pill">Update</a></li>
+      <li><a href="#tab_d" data-toggle="pill">Delete</a></li>
+    </ul>
+    <div class="tab-content col-md-10">
+            <div class="tab-pane active" id="tab_a">
+                 <h4>View Data</h4>
+                 <div class = "row">
+                   <div class = "col-md-8">
+
+                     <div class = "row">
+                       <div class ="col-md-6">
+                         Name
+                       </div>
+                       <div class ="col-md-6">
+                         <!-- Split button -->
+                         <div class="btn-group">
+                           <button type="button" class="btn btn-danger">Select a Name</button>
+                           <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <span class="caret"></span>
+                             <span class="sr-only">Toggle Dropdown</span>
+                           </button>
+                           <ul class="dropdown-menu">
+                             <li><a href="#">Data</a></li>
+                           </ul>
+                         </div>
+                       </div>
+                      </div>
+
+                       <div class = "row">
+                         <div class ="col-md-6">
+                           Table
+                         </div>
+                         <div class ="col-md-6">
+                           <!-- Split button -->
+                           <div class="btn-group">
+                             <button type="button" class="btn btn-danger">Select a Table</button>
+                             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <span class="caret"></span>
+                               <span class="sr-only">Toggle Dropdown</span>
+                             </button>
+                             <ul class="dropdown-menu">
+                               <li><a href="#">Table</a></li>
+                             </ul>
+                           </div>
+                         </div>
+                        </div>
+
+                         <div class = "row">
+                           <div class ="col-md-6">
+                             Column
+                           </div>
+                           <div class ="col-md-6">
+                             <!-- Split button -->
+                             <div class="btn-group">
+                               <button type="button" class="btn btn-danger">Select a Column</button>
+                               <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 <span class="caret"></span>
+                                 <span class="sr-only">Toggle Dropdown</span>
+                               </button>
+                               <ul class="dropdown-menu">
+                                 <li><a href="#">Column</a></li>
+                               </ul>
+                             </div>
+                           </div>
+                          </div>
+
+                           <div class = "row">
+                             <div class ="col-md-6">
+                               Row
+                             </div>
+                             <div class ="col-md-6">
+                               <!-- Split button -->
+                               <div class="btn-group">
+                                 <button type="button" class="btn btn-danger">Select a Row</button>
+                                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   <span class="caret"></span>
+                                   <span class="sr-only">Toggle Dropdown</span>
+                                 </button>
+                                 <ul class="dropdown-menu">
+                                   <li><a href="#">Row</a></li>
+                                 </ul>
+                               </div>
+                             </div>
+                            </div>
+
+                             <div class = "row">
+                               <div class ="col-md-6">
+                                 WHERE
+                               </div>
+                               <div class ="col-md-6">
+                                 <!-- Split button -->
+                                 <div class="btn-group">
+                                   <button type="button" class="btn btn-danger">Select a WHERE</button>
+                                   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     <span class="caret"></span>
+                                     <span class="sr-only">Toggle Dropdown</span>
+                                   </button>
+                                   <ul class="dropdown-menu">
+                                     <li><a href="#">WHERE</a></li>
+                                   </ul>
+                                 </div>
+                               </div>
+                              </div>
+                     </div>
+                    <div class = "col-md-4">
+                    </div>
+                   </div>
+                </div>
+            <div class="tab-pane" id="tab_b">
+                 <h4>Add</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            </div>
+            <div class="tab-pane" id="tab_c">
+                 <h4>Update</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            </div>
+            <div class="tab-pane" id="tab_d">
+                 <h4>Delete</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            </div>
+    </div><!-- tab content -->
+    </div><!-- end of container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
