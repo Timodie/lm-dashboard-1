@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Peer_Review_Adm_Static</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Peer_Review.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Up here we should have static nav bar for all pages -->
+      <!-- This is the header of the page which is the Peer review admin page -->
+      <div class="row title">
+        <div class="col-md-12 pull-left">
+            <h1>Peer Review (Administrators)</h1>
+        </div>
+      </div>
+      <!-- here we have the table show for the peer review, for the main table -->
+      <div class="row main_table">
+        <div class="col-md-9 col-md-offset-1">
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-bordered table-striped">
+                <thead class="thead">
+                  <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>User Name</th>
+                    <th>Macro Name</th>
+                    <th><center>
+                      Status
+                    </center></th>
+                    <th><center>
+                      View
+                    </center></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>10/08/2016</td>
+                    <td>Kelvin</td>
+                    <td>Macro1</td>
+                    <td>
+                      <div class="row">
+                        <div class="col-md-4 col-md-offset-1 Approve_button">
+                          <button class="btn btn-default btn-sm Approve" type="button">Approve</button>
+                        </div>
+                        <div class="col-md-4 col-md-offset-1 reject_button">
+                          <button class="btn btn-default btn-sm Reject" type="button">Reject</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <center>
+                        <button class="btn btn-default btn-sm View_button" type="button" data-toggle="modal" data-target=".bs-Data-modal-lg">View</button>
+                      </center>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>10/08/2016</td>
+                    <td>Joson</td>
+                    <td>Macro3</td>
+                    <td>
+                      <div class="row">
+                        <div class="col-md-4 col-md-offset-1 Approve_button">
+                          <button class="btn btn-default btn-sm Approve" type="button">Approve</button>
+                        </div>
+                        <div class="col-md-4 col-md-offset-1 reject_button">
+                          <button class="btn btn-default btn-sm Reject" type="button">Reject</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <center>
+                        <button class="btn btn-default btn-sm View_button" type="button" data-toggle="modal" data-target=".bs-Data-modal-lg">View</button>
+                      </center>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>10/09/2016</td>
+                    <td>Timodie</td>
+                    <td>Macro1</td>
+                    <td>
+                      <div class="row">
+                        <div class="col-md-4 col-md-offset-1 Approve_button">
+                          <button class="btn btn-default btn-sm Approve" type="button">Approve</button>
+                        </div>
+                        <div class="col-md-4 col-md-offset-1 reject_button">
+                          <button class="btn btn-default btn-sm Reject" type="button">Reject</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <center>
+                        <button class="btn btn-default btn-sm View_button" type="button" data-toggle="modal" data-target=".bs-Data-modal-lg">View</button>
+                      </center>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Here is the view data -->
+    <div class="modal fade bs-Data-modal-lg" tabindex="-1" role="dialog" aria-labelledby="DataLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel"><center>
+              Data
+            </center></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Zitao</td>
+                  <td>Wang</td>
+                  <td>XXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>XX</td>
+                  <td>XXXX</td>
+                  <td>XXXXXXXXXXXX</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>XX</td>
+                  <td>XXX</td>
+                  <td>XXXXXXXXXXXX</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
