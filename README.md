@@ -9,3 +9,5 @@
 
 if everything good, you will get:
 **Example app listening on port 3000**
+
+NOTE: ALWAY REMEMBER *'npm install new_packge_name --save'* WHEN INSTALLING NEW PACKAGE!!!
