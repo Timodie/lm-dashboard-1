@@ -1,0 +1,11 @@
+.select{
+  padding-bottom: 10px;
+}
+.reset{
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.button-1, .button-1-drop{
+   width:100%;
+}
