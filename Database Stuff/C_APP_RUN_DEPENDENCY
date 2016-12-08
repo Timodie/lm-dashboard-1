@@ -1,0 +1,11 @@
+CREATE TABLE C_APP_RUN_DEPENDENCY(
+  run_app_dpndnc_id INT PRIMARY KEY NOT NULL,
+  app_nme TEXT NOT NULL,
+  run_nme TEXT NOT NULL,
+  dependant_app_nme TEXT NOT NULL,
+  dependant_run_nme TEXT NOT NULL,
+  crt_dtm TEXT NOT NULL,
+  lst_mdfd_dtm TEXT NOT NULL,
+  app_run_id INT,
+  dependant_app_run_id INT
+);
