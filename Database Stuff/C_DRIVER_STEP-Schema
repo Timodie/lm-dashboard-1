@@ -1,0 +1,22 @@
+CREATE TABLE C_DRIVER_SCHEDULE (
+Driver Step ID INT NOT NULL,
+APP Name TEXT NOT NULL,
+Run Name TEXT NOT NULL,
+Group Number INT NOT NULL,
+Group Name TEXT NOT NULL,
+Run Order Number INT NOT NULL,
+Path Text TEXT NOT NULL,
+Command Text TEXT NOT NULL,
+Parameter Text TEXT NOT NULL,
+Group Concurrency Indicator TEXT NOT NULL,
+Step Concurrency Indicator TEXT NOT NULL,
+Notify Text TEXT NOT NULL,
+Step Type Code TEXT NOT NULL,
+Step Name TEXT NOT NULL,
+Error Process Number INT NOT NULL,
+Create Date Time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+Last Modified Date Time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+APP Run ID INT NOT NULL,
+Active Step Indicator TEXT NOT NULL,
+PRIMARY KEY (Driver Step ID)
+);
