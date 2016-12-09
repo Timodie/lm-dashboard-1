@@ -1,12 +1,12 @@
 CREATE TABLE C_APP_RUN_DEPENDENCY (
-Run App Dependency ID INT PRIMARY KEY NOT NULL,
-APP Name TEXT NOT NULL,
-Run Name TEXT NOT NULL,
-Dependant APP Name TEXT NOT NULL,
-Dependant Run Name TEXT NOT NULL,
-Create Date Time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-Last Modified Date Time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-APP Run ID INT NOT NULL,
-Dependant APP Run ID INT NOT NULL,
-PRIMARY KEY (Run App Dependency ID)
+run_app_dependency_id INT PRIMARY KEY NOT NULL,
+app_name TEXT NOT NULL,
+run_name TEXT NOT NULL,
+dependent_app_name TEXT NOT NULL,
+dependent_run_name TEXT NOT NULL,
+create_date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+last_modified_date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+app_run_id INT NOT NULL,
+dependent_app_run_id INT NOT NULL,
+PRIMARY KEY (run_app_dependency_id)
 );
