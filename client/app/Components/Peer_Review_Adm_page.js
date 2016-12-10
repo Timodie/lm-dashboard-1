@@ -3,7 +3,7 @@ import Adm_Entry from './MacroS_PeerR/Adm_Entry.js'
 import Adm_Thread from './MacroS_PeerR/Adm_thread.js'
 
 
-export default class Macro_Status_Page extends React.Component {
+export default class Peer_Review_Page extends React.Component {
 
   render() {
     return (
