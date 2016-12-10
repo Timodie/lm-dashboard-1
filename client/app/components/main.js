@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class MainPanel extends React.Component {
   render() {
@@ -9,7 +8,7 @@ class MainPanel extends React.Component {
           <h1>Main Page</h1>
         </div>
       <ul className="nav nav-pills nav-stacked col-md-2">
-        <li class="active"><a href="#tab_a" data-toggle="pill">View Data</a></li>
+        <li className="active"><a href="#tab_a" data-toggle="pill">View Data</a></li>
         <li><a href="#tab_b" data-toggle="pill">Add</a></li>
         <li><a href="#tab_c" data-toggle="pill">Update</a></li>
         <li><a href="#tab_d" data-toggle="pill">Delete</a></li>
@@ -158,7 +157,7 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="input-group">
-                             <input type="text" className="form-control" placeholder="Name" aria-describedby="sizing-addon2">
+                             <input type="text" className="form-control" placeholder="Name" aria-describedby="sizing-addon2"></input>
                            </div>
                          </div>
                         </div>
@@ -168,9 +167,9 @@ class MainPanel extends React.Component {
                              Table
                            </div>
                           <div className ="col-md-8">
-                            <!-- Split button -->
+
                             <div className="input-group">
-                              <input type="text" className="form-control" placeholder="Table" aria-describedby="sizing-addon2">
+                              <input type="text" className="form-control" placeholder="Table" aria-describedby="sizing-addon2"></input>
                             </div>
                           </div>
                         </div>
@@ -180,9 +179,9 @@ class MainPanel extends React.Component {
                             Column
                          </div>
                          <div className ="col-md-8">
-                           <!-- Split button -->
+
                            <div className="input-group">
-                             <input type="text" className="form-control" placeholder="Column" aria-describedby="sizing-addon2">
+                             <input type="text" className="form-control" placeholder="Column" aria-describedby="sizing-addon2"></input>
                            </div>
                           </div>
                         </div>
@@ -192,9 +191,9 @@ class MainPanel extends React.Component {
                               Row
                           </div>
                           <div className ="col-md-8">
-                             <!-- Split button -->
+
                              <div className="input-group">
-                               <input type="text" className="form-control" placeholder="Row" aria-describedby="sizing-addon2">
+                               <input type="text" className="form-control" placeholder="Row" aria-describedby="sizing-addon2"></input>
                              </div>
                            </div>
                           </div>
@@ -204,9 +203,9 @@ class MainPanel extends React.Component {
                                WHERE
                              </div>
                              <div className ="col-md-8">
-                               <!-- Split button -->
+
                                <div className="input-group">
-                                 <input type="text" className="form-control" placeholder="WHERE" aria-describedby="sizing-addon2">
+                                 <input type="text" className="form-control" placeholder="WHERE" aria-describedby="sizing-addon2"></input>
                                </div>
                              </div>
                           </div>
@@ -237,7 +236,7 @@ class MainPanel extends React.Component {
                            Name
                          </div>
                          <div className ="col-md-8">
-                           <!-- Split button -->
+
                            <div className="dropdown">
                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                <div className= "selector" style="float:left">
@@ -260,7 +259,7 @@ class MainPanel extends React.Component {
                              Table
                            </div>
                           <div className ="col-md-8">
-                            <!-- Split button -->
+
                             <div className="dropdown">
                               <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <div style="float:left">
@@ -282,7 +281,7 @@ class MainPanel extends React.Component {
                             Column
                          </div>
                          <div className ="col-md-8">
-                           <!-- Split button -->
+
                            <div className="dropdown">
                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                <div style="float:left">
@@ -304,7 +303,7 @@ class MainPanel extends React.Component {
                               Row
                           </div>
                           <div className ="col-md-8">
-                             <!-- Split button -->
+
                              <div className="dropdown">
                                <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                  <div style="float:left">
@@ -326,7 +325,7 @@ class MainPanel extends React.Component {
                                WHERE
                              </div>
                              <div className ="col-md-8">
-                               <!-- Split button -->
+
                                <div className="dropdown">
                                  <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <div style="float:left">
@@ -369,7 +368,7 @@ class MainPanel extends React.Component {
                            Name
                          </div>
                          <div className ="col-md-8">
-                           <!-- Split button -->
+
                            <div className="dropdown">
                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                <div className= "selector" style="float:left">
@@ -392,7 +391,7 @@ class MainPanel extends React.Component {
                              Table
                            </div>
                           <div className ="col-md-8">
-                            <!-- Split button -->
+
                             <div className="dropdown">
                               <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <div style="float:left">
@@ -414,7 +413,7 @@ class MainPanel extends React.Component {
                             Column
                          </div>
                          <div className ="col-md-8">
-                           <!-- Split button -->
+
                            <div className="dropdown">
                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                <div style="float:left">
@@ -436,7 +435,7 @@ class MainPanel extends React.Component {
                               Row
                           </div>
                           <div className ="col-md-8">
-                             <!-- Split button -->
+
                              <div className="dropdown">
                                <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                  <div style="float:left">
@@ -458,7 +457,7 @@ class MainPanel extends React.Component {
                                WHERE
                              </div>
                              <div className ="col-md-8">
-                               <!-- Split button -->
+
                                <div className="dropdown">
                                  <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <div style="float:left">
@@ -491,12 +490,8 @@ class MainPanel extends React.Component {
                       </div>
                      </div>
               </div>
-      </div><!-- tab content -->
-      </div><!-- end of container -->
+      </div>
+      </div>
     );
   }
 }
-
-ReactDOM.render(
-  <MainPanel />,
-);
