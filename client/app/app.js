@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Macro_Status_Page from './Components/Macro_Status_Dev_page.js';
 import Peer_Review_Page from './Components/Peer_Review_Adm_page.js';
+import ViewLog from './Components/ViewLog.js';
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 
 
@@ -14,12 +15,23 @@ class macro_status_page extends React.Component {
     );
   }
 }
+class view_log_page extends React.Component {
+  render() {
+    return (
+      <div>
+        <link href ="css/ViewLog" rel ="stylesheet" />
+        <ViewLog />
 
+      </div>
+    );
+  }
+}
 class peer_review_page extends React.Component {
   render() {
     return (
       <div>
         <Peer_Review_Page />
+
       </div>
     );
   }
@@ -43,6 +55,8 @@ ReactDOM.render((
       <IndexRoute component={macro_status_page} />
       <Route path="Macro_Status" component={macro_status_page} />
       <Route path="Peer_Review" component={peer_review_page} />
-    </Route>
+      <Route path ="View_log" component= {view_log_page}/>
+      
+        </Route>
   </Router>
 ),document.getElementById('lm_dashboard'));
