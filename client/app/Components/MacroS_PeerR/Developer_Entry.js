@@ -2,15 +2,21 @@ import React from 'react';
 
 export default class Developer_Entry extends React.Component {
 
+    constructor(props) {
+      super(props);
+      this.state = {
+      };
+    }
+
     render() {
       return (
         <tr>
-          <th scope="row">this.props.id</th>
-          <td>this.props.date</td>
-          <td>this.props.macroname</td>
+          <th scope="row">{this.props.id}</th>
+          <td>{this.props.Date}</td>
+          <td>{this.props.Macroname}</td>
           <td>
             <center>
-              this.props.status
+              {this.props.status}
             </center>
           </td>
           <td>

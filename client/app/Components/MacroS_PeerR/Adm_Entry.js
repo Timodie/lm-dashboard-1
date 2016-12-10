@@ -2,13 +2,19 @@ import React from 'react';
 
 export default class Adm_Entry extends React.Component {
 
+    constructor(props) {
+      super(props);
+      this.state = {
+      };
+    }
+
     render() {
       return (
         <tr>
           <th scope="row">this.props.id</th>
           <td>this.props.date</td>
           <td>this.props.username</td>
-          <td>this.props.macroname</td>
+          <td>this.props.Macroname</td>
           <td>
             <div className="row">
               <div className="col-md-4 col-md-offset-1 Approve_button">
