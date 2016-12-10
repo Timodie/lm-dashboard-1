@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MainPanel extends React.Component {
+export default class MainPanel extends React.Component {
   render() {
     return (
       <div className="container">
@@ -24,12 +24,13 @@ class MainPanel extends React.Component {
                            Name
                          </div>
                          <div className ="col-md-8">
+
                            <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div style="float:left">
+                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <div className="go-left">
                                Select a Name
                              </div>
-                               <div style="float:right">
+                               <div className="go-right">
                                  <span className="caret"></span>
                                </div>
                              </button>
@@ -48,11 +49,11 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                             <div className="dropdown">
-                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <div style="float:left">
+                              <button className="btn btn-default button-1 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <div className="go-left">
                                 Select a Table
                               </div>
-                              <div style="float:right">
+                              <div className="go-right">
                                   <span className="caret"></span>
                               </div>
                               </button>
@@ -70,11 +71,11 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div style="float:left">
+                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <div className="go-left">
                                Select a Column
                              </div>
-                               <div style="float:right">
+                               <div className="go-right">
                                  <span className="caret"></span>
                                </div>
                              </button>
@@ -92,11 +93,11 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                              <div className="dropdown">
-                               <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <div style="float:left">
+                               <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                 <div className="go-left">
                                  Select a Row
                                </div>
-                                 <div style="float:right">
+                                 <div className="go-right">
                                    <span className="caret"></span>
                                  </div>
                                </button>
@@ -114,11 +115,11 @@ class MainPanel extends React.Component {
                              <div className ="col-md-8">
 
                                <div className="dropdown">
-                                 <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                   <div style="float:left">
+                                 <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                   <div className="go-left">
                                    Select a WHERE
                                   </div>
-                                   <div style="float:right">
+                                   <div className="go-right">
                                      <span className="caret"></span>
                                    </div>
                                  </button>
@@ -157,7 +158,7 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="input-group">
-                             <input type="text" className="form-control" placeholder="Name" aria-describedby="sizing-addon2"></input>
+                             <input type="text" className="form-control" placeholder="Name" aria-describedby="sizing-addon2" />
                            </div>
                          </div>
                         </div>
@@ -169,7 +170,7 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                             <div className="input-group">
-                              <input type="text" className="form-control" placeholder="Table" aria-describedby="sizing-addon2"></input>
+                              <input type="text" className="form-control" placeholder="Table" aria-describedby="sizing-addon2" />
                             </div>
                           </div>
                         </div>
@@ -181,7 +182,7 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="input-group">
-                             <input type="text" className="form-control" placeholder="Column" aria-describedby="sizing-addon2"></input>
+                             <input type="text" className="form-control" placeholder="Column" aria-describedby="sizing-addon2" />
                            </div>
                           </div>
                         </div>
@@ -193,7 +194,7 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                              <div className="input-group">
-                               <input type="text" className="form-control" placeholder="Row" aria-describedby="sizing-addon2"></input>
+                               <input type="text" className="form-control" placeholder="Row" aria-describedby="sizing-addon2" />
                              </div>
                            </div>
                           </div>
@@ -205,7 +206,7 @@ class MainPanel extends React.Component {
                              <div className ="col-md-8">
 
                                <div className="input-group">
-                                 <input type="text" className="form-control" placeholder="WHERE" aria-describedby="sizing-addon2"></input>
+                                 <input type="text" className="form-control" placeholder="WHERE" aria-describedby="sizing-addon2" />
                                </div>
                              </div>
                           </div>
@@ -238,11 +239,11 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className= "selector" style="float:left">
+                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <div className= "selector go-left">
                                Select a Name
                               </div>
-                               <div style="float:right">
+                               <div className="go-right">
                                  <span className="caret"></span>
                                </div>
                              </button>
@@ -261,11 +262,11 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                             <div className="dropdown">
-                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <div style="float:left">
+                              <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <div className="go-left">
                                 Select a Table
                                 </div>
-                                <div style="float:right">
+                                <div className="go-right">
                                   <span className="caret"></span>
                                 </div>
                               </button>
@@ -283,11 +284,11 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div style="float:left">
+                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <div className="go-left">
                                Select a Column
                              </div>
-                               <div style="float:right">
+                               <div className="go-right">
                                  <span className="caret"></span>
                                </div>
                              </button>
@@ -305,11 +306,11 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                              <div className="dropdown">
-                               <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <div style="float:left">
+                               <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                 <div className="go-left">
                                  Select a Row
                                 </div>
-                                 <div style="float:right">
+                                 <div className="go-right">
                                    <span className="caret"></span>
                                  </div>
                                </button>
@@ -327,11 +328,11 @@ class MainPanel extends React.Component {
                              <div className ="col-md-8">
 
                                <div className="dropdown">
-                                 <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                   <div style="float:left">
+                                 <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                   <div className="go-left">
                                    Select a WHERE
                                  </div>
-                                   <div style="float:right">
+                                   <div className="go-right">
                                      <span className="caret"></span>
                                    </div>
                                  </button>
@@ -370,11 +371,11 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className= "selector" style="float:left">
+                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <div className= "selector go-left">
                                Select a Name
                               </div>
-                               <div style="float:right">
+                               <div className="go-right">
                                  <span className="caret"></span>
                                </div>
                              </button>
@@ -393,11 +394,11 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                             <div className="dropdown">
-                              <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <div style="float:left">
+                              <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <div className="go-left">
                                 Select a Table
                               </div>
-                                <div style="float:right">
+                                <div className="go-right">
                                   <span className="caret"></span>
                                 </div>
                               </button>
@@ -415,11 +416,11 @@ class MainPanel extends React.Component {
                          <div className ="col-md-8">
 
                            <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div style="float:left">
+                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                               <div className="go-left">
                                Select a Column
                              </div>
-                               <div style="float:right">
+                               <div className="go-right">
                                  <span className="caret"></span>
                                </div>
                              </button>
@@ -437,11 +438,11 @@ class MainPanel extends React.Component {
                           <div className ="col-md-8">
 
                              <div className="dropdown">
-                               <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <div style="float:left">
+                               <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                 <div className="go-left">
                                  Select a Row
                                </div>
-                                 <div style="float:right">
+                                 <div className="go-right">
                                    <span className="caret"></span>
                                  </div>
                                </button>
@@ -459,11 +460,11 @@ class MainPanel extends React.Component {
                              <div className ="col-md-8">
 
                                <div className="dropdown">
-                                 <button className="btn btn-default button-1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                   <div style="float:left">
+                                 <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                   <div className="go-left">
                                    Select a WHERE
                                   </div>
-                                   <div style="float:right">
+                                   <div className="go-right">
                                      <span className="caret"></span>
                                    </div>
                                  </button>

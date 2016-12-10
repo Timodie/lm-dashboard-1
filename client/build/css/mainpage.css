@@ -9,3 +9,9 @@
 .button-1, .button-1-drop{
    width:100%;
 }
+.go-left{
+  float: left;
+}
+.go-right{
+  float: right;
+}

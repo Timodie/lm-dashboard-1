@@ -1,14 +1,22 @@
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+var db = require('./db');
 
-passport.use(new Strategy());
+passport.use(new Strategy(
+  function(username, password, done) {
+    db.users.findByUsername(username, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
+      return done(null, user);
+    });
+  }));
 
 passport.serializeUser(function(user, cb) {
   cb(null, user.id);
 });
 
-//fixdb
 passport.deserializeUser(function(id, cb) {
   db.users.findById(id, function (err, user) {
     if (err) { return cb(err); }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Adm_Entry from './MacroS_PeerR/Adm_Entry.js'
-import Adm_Thread from './MacroS_PeerR/Adm_thread.js'
 
 
 export default class Peer_Review_Page extends React.Component {
@@ -34,11 +33,9 @@ export default class Peer_Review_Page extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <Adm_Thread>
-                        <Adm_Entry id="1" date="20 hrs" username="Tim" macroname="Macor2"/>
-                        <Adm_Entry id="2" date="20 hrs" username="Kelvin" macroname="Macor1"/>
-                        <Adm_Entry id="3" date="20 hrs" username="Eric" macroname="Macor3"/>
-                      </Adm_Thread>
+                      <Adm_Entry id="1" date="20 hrs" username="Tim" macroname="Macor2"/>
+                      <Adm_Entry id="2" date="20 hrs" username="Kelvin" macroname="Macor1"/>
+                      <Adm_Entry id="3" date="20 hrs" username="Eric" macroname="Macor3"/>
                     </tbody>
                   </table>
                 </div>
