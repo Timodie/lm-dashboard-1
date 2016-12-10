@@ -1,6 +1,6 @@
 import React from 'react';
-import Developer_Entry from './commentpage/comment.js'
-import CommentThread from './commentpage/commentthread.js'
+import Developer_Entry from './MacroS_PeerR/Developer_Entry.js'
+import Developer_Thread from './MacroS_PeerR/Developer_thread.js'
 
 
 export default class Macro_Status_Page extends React.Component {
@@ -8,22 +8,39 @@ export default class Macro_Status_Page extends React.Component {
   render() {
     return (
       <div className="container">
-        <div class="row title">
-          <div class="col-md-12 pull-left">
-              <h1>Macro Status(Developer)</h1>
+        <div className="row title">
+          <div className="col-md-12 pull-left">
+              <h1>Macro Status (Developer)</h1>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-8 col-md-offset-2 Devthread">
-            <div className="panel panel-default Devthread">
-              <div className="panel-body">
-                <CommentThread onPost={(firstname, lastname, email, contents) => this.handleCommentPost(firstname, lastname, email, contents)} onSecondPost={(email,contents) => this.handleSecondCommentPost(email,contents)}>
-                  {this.state.comments.map((comment, i) => {
-                    return (
-                      <Comment key={i} data={comment} onReply={(commentid,firstname,lastname,email,contents) => this.handleFreply(commentid,firstname,lastname,email,contents)} onSecondReply={(commentid,email,contents) => this.handleSreply(commentid,email,contents)} />
-                    );
-                  })}
-                </CommentThread>
+          <div className="row main_table">
+            <div className="col-md-9 col-md-offset-1">
+              <div className="row">
+                <div className="col-md-12">
+                  <table className="table table-bordered table-striped">
+                    <thead className="thead">
+                      <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Macro Name</th>
+                        <th><center>
+                          Status
+                        </center></th>
+                        <th><center>
+                          View
+                        </center></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <Developer_Thread>
+                        <Developer_Entry id="1" date="20 hrs" macroname="Macor2" status="Approve"/>
+                        <Developer_Entry id="2" date="20 hrs" macroname="Macor1" status="Pending"/>
+                        <Developer_Entry id="3" date="20 hrs" macroname="Macor3" status="Rejected"/>
+                      </Developer_Thread>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
