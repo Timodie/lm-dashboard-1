@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import Macro_Status_Page from './Components/Macro_Status_Dev_page.js';
 import Peer_Review_Page from './Components/Peer_Review_Adm_page.js';
 import ViewLog from './Components/ViewLog.js';
+import Navbar from './Components/navbar.js';
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
+
 import MainPanel from './Components/main.js';
 
 
@@ -49,11 +51,11 @@ class main_page extends React.Component {
 }
 
 
-
 class App extends React.Component {
   render() {
     return (
       <div>
+        <Navbar />
         {this.props.children}
       </div>
     )
@@ -69,7 +71,6 @@ ReactDOM.render((
       <Route path="Macro_Status" component={macro_status_page} />
       <Route path="Peer_Review" component={peer_review_page} />
       <Route path ="View_log" component= {view_log_page}/>
-      
-        </Route>
+    </Route>
   </Router>
 ),document.getElementById('lm_dashboard'));

@@ -13,13 +13,13 @@ render(){
        </div>
        <div className="collapse navbar-collapse pull-right" >
          <ul className="nav navbar-nav">
-           <li className="active"><a href="#">Main</a></li>
-           <li><Link to ="View_log">View Log</a></li>
-           <li><a href="#">Peer Review</a></li>
-           <li><a href="#">Sign Out</a></li>
+           <li className="active"><Link to="Main">Main</Link></li>
+           <li><Link to ="View_log">View Log</Link></li>
+           <li><Link to="Peer_Review">Peer Review</Link></li>
+           <li><Link to="#">Sign Out</Link></li>
          </ul>
-         </div>
        </div>
+     </div>
      </nav>
 
      );
