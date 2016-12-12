@@ -16,7 +16,7 @@ render(){
            <li className="active"><Link to="Main">Main</Link></li>
            <li><Link to ="View_log">View Log</Link></li>
            <li><Link to="Peer_Review">Peer Review</Link></li>
-           <li><Link to="#">Sign Out</Link></li>
+           <li><Link to="Sign-In">Sign Out</Link></li>
          </ul>
        </div>
      </div>
