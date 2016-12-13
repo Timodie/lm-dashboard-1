@@ -24,111 +24,66 @@ export default class MainPanel extends React.Component {
                            Name
                          </div>
                          <div className ="col-md-8">
-
-                           <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className="go-left">
-                               Select a Name
-                             </div>
-                               <div className="go-right">
-                                 <span className="caret"></span>
-                               </div>
-                             </button>
-                             <ul className="button-1-drop dropdown-menu">
-                               <li><a href="#">ericgendreau</a></li>
-                               <li><a href="#">gordananderson</a></li>
-                             </ul>
-                           </div>
+                             <select className="selectpicker" data-live-search="true" title="Select a Name">
+                               <option>ericgendreau</option>
+                              <option>gordananderson</option>
+                             </select>
                          </div>
                         </div>
 
                         <div className = "row select">
                           <div className ="col-md-4">
-                             Table
-                           </div>
-                          <div className ="col-md-8">
-
-                            <div className="dropdown">
-                              <button className="btn btn-default button-1 dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <div className="go-left">
-                                Select a Table
-                              </div>
-                              <div className="go-right">
-                                  <span className="caret"></span>
-                              </div>
-                              </button>
-                              <ul className="button-1-drop dropdown-menu">
-                                <li><a href="#">Table</a></li>
-                              </ul>
-                            </div>
+                            Table
                           </div>
-                        </div>
-
-                        <div className = "row select">
-                          <div className ="col-md-4">
-                            Column
+                          <div className ="col-md-8">
+                              <select className="selectpicker" data-live-search="true" title="Select a Table">
+                                <option>Table1</option>
+                               <option>myTable2</option>
+                                 <option>iwantTable3</option>
+                                <option>aTable4</option>
+                                  <option>attaTable5</option>
+                                 <option>hiTable6</option>
+                              </select>
+                          </div>
                          </div>
-                         <div className ="col-md-8">
-
-                           <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className="go-left">
-                               Select a Column
-                             </div>
-                               <div className="go-right">
-                                 <span className="caret"></span>
-                               </div>
-                             </button>
-                                <ul className="button-1-drop dropdown-menu">
-                                  <li><a href="#">Column</a></li>
-                                </ul>
-                          </div>
-                          </div>
-                        </div>
-
-                        <div className = "row select">
-                          <div className ="col-md-4">
-                              Row
-                          </div>
-                          <div className ="col-md-8">
-
-                             <div className="dropdown">
-                               <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <div className="go-left">
-                                 Select a Row
-                               </div>
-                                 <div className="go-right">
-                                   <span className="caret"></span>
-                                 </div>
-                               </button>
-                               <ul className="button-1-drop dropdown-menu">
-                                 <li><a href="#">Row</a></li>
-                               </ul>
-                             </div>
-                           </div>
-                          </div>
 
                          <div className = "row select">
+                           <div className ="col-md-4">
+                             Column
+                           </div>
+                           <div className ="col-md-8">
+                               <select className="selectpicker" data-live-search="true" title="Select a Column">
+                                 <option>Column1</option>
+                                <option>Column2</option>
+                               </select>
+                           </div>
+                          </div>
+
+                          <div className = "row select">
+                            <div className ="col-md-4">
+                              Row
+                            </div>
+                            <div className ="col-md-8">
+                                <select className="selectpicker" data-live-search="true" title="Select a Row">
+                                  <option>Row1</option>
+                                 <option>Row2</option>
+                                </select>
+                            </div>
+                           </div>
+
+                           <div className = "row select">
                              <div className ="col-md-4">
                                WHERE
                              </div>
                              <div className ="col-md-8">
-
-                               <div className="dropdown">
-                                 <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                   <div className="go-left">
-                                   Select a WHERE
-                                  </div>
-                                   <div className="go-right">
-                                     <span className="caret"></span>
-                                   </div>
-                                 </button>
-                                 <ul className="button-1-drop dropdown-menu">
-                                   <li><a href="#">WHERE</a></li>
-                                 </ul>
-                               </div>
+                                 <select className="selectpicker" data-live-search="true" title="Select a WHERE">
+                                   <option>Here</option>
+                                  <option>There</option>
+                                  <option>Everywhere</option>
+                                 </select>
                              </div>
-                          </div>
+                            </div>
+
                        </div>
                       <div className = "col-md-4">
                         <div className = "row reset">
@@ -237,111 +192,66 @@ export default class MainPanel extends React.Component {
                            Name
                          </div>
                          <div className ="col-md-8">
-
-                           <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className= "selector go-left">
-                               Select a Name
-                              </div>
-                               <div className="go-right">
-                                 <span className="caret"></span>
-                               </div>
-                             </button>
-                             <ul className="button-1-drop dropdown-menu">
-                               <li><a href="#">ericgendreau</a></li>
-                               <li><a href="#">gordananderson</a></li>
-                             </ul>
-                           </div>
+                             <select className="selectpicker" data-live-search="true" title="Select a Name">
+                               <option>ericgendreau</option>
+                              <option>gordananderson</option>
+                             </select>
                          </div>
                         </div>
 
                         <div className = "row select">
                           <div className ="col-md-4">
-                             Table
-                           </div>
-                          <div className ="col-md-8">
-
-                            <div className="dropdown">
-                              <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <div className="go-left">
-                                Select a Table
-                                </div>
-                                <div className="go-right">
-                                  <span className="caret"></span>
-                                </div>
-                              </button>
-                              <ul className="button-1-drop dropdown-menu">
-                                <li><a href="#">Table</a></li>
-                              </ul>
-                            </div>
+                            Table
                           </div>
-                        </div>
-
-                        <div className = "row select">
-                          <div className ="col-md-4">
-                            Column
+                          <div className ="col-md-8">
+                              <select className="selectpicker" data-live-search="true" title="Select a Table">
+                                <option>Table1</option>
+                               <option>myTable2</option>
+                                 <option>iwantTable3</option>
+                                <option>aTable4</option>
+                                  <option>attaTable5</option>
+                                 <option>hiTable6</option>
+                              </select>
+                          </div>
                          </div>
-                         <div className ="col-md-8">
-
-                           <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className="go-left">
-                               Select a Column
-                             </div>
-                               <div className="go-right">
-                                 <span className="caret"></span>
-                               </div>
-                             </button>
-                                <ul className="button-1-drop dropdown-menu">
-                                  <li><a href="#">Column</a></li>
-                                </ul>
-                          </div>
-                          </div>
-                        </div>
-
-                        <div className = "row select">
-                          <div className ="col-md-4">
-                              Row
-                          </div>
-                          <div className ="col-md-8">
-
-                             <div className="dropdown">
-                               <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <div className="go-left">
-                                 Select a Row
-                                </div>
-                                 <div className="go-right">
-                                   <span className="caret"></span>
-                                 </div>
-                               </button>
-                               <ul className="button-1-drop dropdown-menu">
-                                 <li><a href="#">Row</a></li>
-                               </ul>
-                             </div>
-                           </div>
-                          </div>
 
                          <div className = "row select">
+                           <div className ="col-md-4">
+                             Column
+                           </div>
+                           <div className ="col-md-8">
+                               <select className="selectpicker" data-live-search="true" title="Select a Column">
+                                 <option>Column1</option>
+                                <option>Column2</option>
+                               </select>
+                           </div>
+                          </div>
+
+                          <div className = "row select">
+                            <div className ="col-md-4">
+                              Row
+                            </div>
+                            <div className ="col-md-8">
+                                <select className="selectpicker" data-live-search="true" title="Select a Row">
+                                  <option>Row1</option>
+                                 <option>Row2</option>
+                                </select>
+                            </div>
+                           </div>
+
+                           <div className = "row select">
                              <div className ="col-md-4">
                                WHERE
                              </div>
                              <div className ="col-md-8">
-
-                               <div className="dropdown">
-                                 <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                   <div className="go-left">
-                                   Select a WHERE
-                                 </div>
-                                   <div className="go-right">
-                                     <span className="caret"></span>
-                                   </div>
-                                 </button>
-                                 <ul className="button-1-drop dropdown-menu">
-                                   <li><a href="#">WHERE</a></li>
-                                 </ul>
-                               </div>
+                                 <select className="selectpicker" data-live-search="true" title="Select a WHERE">
+                                   <option>Here</option>
+                                  <option>There</option>
+                                  <option>Everywhere</option>
+                                 </select>
                              </div>
-                          </div>
+                            </div>
+
                        </div>
                       <div className = "col-md-4">
                         <div className = "row reset">
@@ -369,111 +279,66 @@ export default class MainPanel extends React.Component {
                            Name
                          </div>
                          <div className ="col-md-8">
-
-                           <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className= "selector go-left">
-                               Select a Name
-                              </div>
-                               <div className="go-right">
-                                 <span className="caret"></span>
-                               </div>
-                             </button>
-                             <ul className="button-1-drop dropdown-menu">
-                               <li><a href="#">ericgendreau</a></li>
-                               <li><a href="#">gordananderson</a></li>
-                             </ul>
-                           </div>
+                             <select className="selectpicker" data-live-search="true" title="Select a Name">
+                               <option>ericgendreau</option>
+                              <option>gordananderson</option>
+                             </select>
                          </div>
                         </div>
 
                         <div className = "row select">
                           <div className ="col-md-4">
-                             Table
-                           </div>
-                          <div className ="col-md-8">
-
-                            <div className="dropdown">
-                              <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <div className="go-left">
-                                Select a Table
-                              </div>
-                                <div className="go-right">
-                                  <span className="caret"></span>
-                                </div>
-                              </button>
-                              <ul className="button-1-drop dropdown-menu">
-                                <li><a href="#">Table</a></li>
-                              </ul>
-                            </div>
+                            Table
                           </div>
-                        </div>
-
-                        <div className = "row select">
-                          <div className ="col-md-4">
-                            Column
+                          <div className ="col-md-8">
+                              <select className="selectpicker" data-live-search="true" title="Select a Table">
+                                <option>Table1</option>
+                               <option>myTable2</option>
+                                 <option>iwantTable3</option>
+                                <option>aTable4</option>
+                                  <option>attaTable5</option>
+                                 <option>hiTable6</option>
+                              </select>
+                          </div>
                          </div>
-                         <div className ="col-md-8">
-
-                           <div className="dropdown">
-                             <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                               <div className="go-left">
-                               Select a Column
-                             </div>
-                               <div className="go-right">
-                                 <span className="caret"></span>
-                               </div>
-                             </button>
-                                <ul className="button-1-drop dropdown-menu">
-                                  <li><a href="#">Column</a></li>
-                                </ul>
-                          </div>
-                          </div>
-                        </div>
-
-                        <div className = "row select">
-                          <div className ="col-md-4">
-                              Row
-                          </div>
-                          <div className ="col-md-8">
-
-                             <div className="dropdown">
-                               <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <div className="go-left">
-                                 Select a Row
-                               </div>
-                                 <div className="go-right">
-                                   <span className="caret"></span>
-                                 </div>
-                               </button>
-                               <ul className="button-1-drop dropdown-menu">
-                                 <li><a href="#">Row</a></li>
-                               </ul>
-                             </div>
-                           </div>
-                          </div>
 
                          <div className = "row select">
+                           <div className ="col-md-4">
+                             Column
+                           </div>
+                           <div className ="col-md-8">
+                               <select className="selectpicker" data-live-search="true" title="Select a Column">
+                                 <option>Column1</option>
+                                <option>Column2</option>
+                               </select>
+                           </div>
+                          </div>
+
+                          <div className = "row select">
+                            <div className ="col-md-4">
+                              Row
+                            </div>
+                            <div className ="col-md-8">
+                                <select className="selectpicker" data-live-search="true" title="Select a Row">
+                                  <option>Row1</option>
+                                 <option>Row2</option>
+                                </select>
+                            </div>
+                           </div>
+
+                           <div className = "row select">
                              <div className ="col-md-4">
                                WHERE
                              </div>
                              <div className ="col-md-8">
-
-                               <div className="dropdown">
-                                 <button className="btn btn-default button-1 dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                   <div className="go-left">
-                                   Select a WHERE
-                                  </div>
-                                   <div className="go-right">
-                                     <span className="caret"></span>
-                                   </div>
-                                 </button>
-                                 <ul className="button-1-drop dropdown-menu">
-                                   <li><a href="#">WHERE</a></li>
-                                 </ul>
-                               </div>
+                                 <select className="selectpicker" data-live-search="true" title="Select a WHERE">
+                                   <option>Here</option>
+                                  <option>There</option>
+                                  <option>Everywhere</option>
+                                 </select>
                              </div>
-                          </div>
+                            </div>
+
                        </div>
                       <div className = "col-md-4">
                         <div className = "row reset">
