@@ -6,25 +6,43 @@ var connection = mysql.createConnection({
   database : 'mysql'
 });
 
-connection.connect();
+
 
 exports.findByUsername = function(username, cb) {
-    process.nextTick(function() {
-        connection.query('SELECT * where username =' + username,
-            function(error, results, fields) {
-                if (error)
-                    throw error;
-                return callback(results[0]);
+    connection.connect();
+    connection.query('SELECT * where username =' + username,
+        function(error, results, fields) {
+            if (error){
+                cb(err, null)
             }
-        );
-    }
-    return cb(null, null);
-  });
+            if (results == null){
+                cb(null, null);
+            }
+            else{
+                cb(null, results[0]);
+            }
+        }
+    );
+    connection.end();
 }
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
 
-  console.log('The solution is: ', rows[0].solution);
-});
+exports.findById = function(id, cb) {
+    connection.connect();
+    var idx = id - 1;
+    connection.query('SELECT * where userid =' + idx,
+        function(error, results, fields) {
+            if (error){
+                cb(err, null)
+            }
+            if (results == null){
 
-connection.end();
+                cb(null, null);
+            }
+            else{
+                cb(null, results[0]);
+            }
+        }
+    );
+    connection.end();
+}
+
