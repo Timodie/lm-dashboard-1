@@ -13,7 +13,7 @@ render(){
        </div>
        <div className="collapse navbar-collapse pull-right" >
          <ul className="nav navbar-nav">
-           <li className="active"><Link to="Main">Main</Link></li>
+           <li><Link to="Main">Main</Link></li>
            <li><Link to ="View_log">View Log</Link></li>
            <li><Link to="Peer_Review">Peer Review</Link></li>
            <li><Link to="Sign-In">Sign Out</Link></li>

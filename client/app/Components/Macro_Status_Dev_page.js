@@ -32,9 +32,9 @@ export default class Macro_Status_Page extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <Developer_Entry id="1" Date="20 hrs" Macroname="Macor2" status="Approve"/>
-                      <Developer_Entry id="2" Date="20 hrs" Macroname="Macor1" status="Pending"/>
-                      <Developer_Entry id="3" Date="20 hrs" Macroname="Macor3" status="Rejected"/>
+                      <Developer_Entry id="1" Date={1453668480000} Macroname="Macor2" status="Approved"/>
+                      <Developer_Entry id="2" Date={1453668480000} Macroname="Macor1" status="Pending"/>
+                      <Developer_Entry id="3" Date={1453668480000} Macroname="Macor3" status="Rejected"/>
                     </tbody>
                   </table>
                 </div>

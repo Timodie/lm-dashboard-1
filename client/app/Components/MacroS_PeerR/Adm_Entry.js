@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import {unixTimeToString} from '../../util.js';
 
 export default class Adm_Entry extends React.Component {
 
@@ -52,7 +53,7 @@ export default class Adm_Entry extends React.Component {
       return (
           <tr>
             <th scope="row">{this.props.id}</th>
-            <td>{this.props.date}</td>
+            <td>{unixTimeToString(this.props.date)}</td>
             <td>{this.props.username}</td>
             <td>{this.props.macroname}</td>
             <td>
