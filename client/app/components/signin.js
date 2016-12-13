@@ -1,6 +1,15 @@
 import React from 'react';
-import {Link} from 'react';
 export default class SignIn extends React.Component{
+
+  onSearch() {
+    this.context.router.push({ pathname: "Main" });
+  }
+
+  gotomain(e) {
+    e.preventDefault();
+    this.onSearch();
+  }
+
 
 render (){
 return (
@@ -28,7 +37,7 @@ return (
                     </div>
                   </div>
 
-                  <button className="btn btn-lg btn-primary btn-block" type="submit"> Sign In {<Link to="Main"/>}</button>
+                  <button className="btn btn-lg btn-primary btn-block" onClick={(e) => this.gotomain(e)} type="submit"> Sign In</button>
 
                 </form>
               </div>
@@ -42,3 +51,7 @@ return (
     }
 
     }
+
+    SignIn.contextTypes = {
+      router: React.PropTypes.object.isRequired
+    };
