@@ -26,7 +26,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "bootstrap-select": "^1.12.1",
-    "react-bootstrap": "^0.30.6"
+    "bootstrap-select": "^1.12.1"
   }
 }
