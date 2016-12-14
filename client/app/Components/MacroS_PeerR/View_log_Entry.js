@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
-import {unixTimeToString, hideElement, checkcolor} from '../../util.js';
+import {unixTimeToString, checkcolor, hideElement, checkstatus, checkshowbutton} from '../../util.js';
 
 
-export default class Developer_Entry extends React.Component {
+export default class View_log_Entry extends React.Component {
 
     constructor(props) {
       super(props);
@@ -12,19 +12,41 @@ export default class Developer_Entry extends React.Component {
       };
     }
 
-    checkstatus(value){
-      if (value == "Pending" || value == "Rejected") {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
     openModal(e){
       e.preventDefault();
       this.setState({
         modalIsOpen : true
       });
+    }
+
+    checkAR(status,time){
+      if (status == "Aproved" && time != 0) {
+        return false;
+      }
+      else if (status == "Rejected" && time != 0) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+
+    checkPending(status,time){
+      if (status == "Pending" && time == 0) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+
+    checkAP(status,time){
+      if (status == "Aproved" && time == 0) {
+        return false;
+      }
+      else {
+        return true;
+      }
     }
 
     closeModal(e){
@@ -61,18 +83,12 @@ export default class Developer_Entry extends React.Component {
       };
       return (
         <tr className={checkcolor(this.props.status)}>
-          <th scope="row">{this.props.id}</th>
-          <td>{unixTimeToString(this.props.Date)}</td>
-          <td>{this.props.Macroname}</td>
+          <td>{unixTimeToString(this.props.date)}</td>
+          <td>{this.props.username}</td>
+          <td>{this.props.macroname}</td>
           <td>
-            <center>
-              {this.props.status}
-            </center>
-          </td>
-          <td>
-            <center>
-              <div className={"btn btn-default btn-md View_button " + hideElement(this.checkstatus(this.props.status))} type="button" onClick={(e) => this.openModal(e)}>View</div>
-            </center>
+            <div className={checkstatus(this.props.status, this.props.date)} onClick={(e) => this.openModal(e)}>{this.props.status}</div>
+            <div className={checkshowbutton(this.props.status, this.props.date)}>{this.props.status}</div>
             <Modal isOpen={this.state.modalIsOpen} style={customStyles} contentLabel="data">
               <center>
                 <h2 ref="subtitle">Data Information</h2>
@@ -81,7 +97,12 @@ export default class Developer_Entry extends React.Component {
               <button className="btn btn-default btn-sm close_button" type="button" onClick={(e) => this.closeModal(e)}>close</button>
             </Modal>
           </td>
+          <td>
+            <div className={hideElement(this.checkAR(this.props.status, this.props.date))}>{unixTimeToString(this.props.finishtime)}</div>
+            <div className={hideElement(this.checkAP(this.props.status, this.props.date))}>Awaiting response</div>
+            <div className={hideElement(this.checkPending(this.props.status, this.props.date))}>In progress</div>
+          </td>
         </tr>
-     )
+      )
    }
  }

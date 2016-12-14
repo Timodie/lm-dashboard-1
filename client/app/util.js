@@ -15,3 +15,33 @@ export function hideElement(shouldHide) {
     return '';
   }
 }
+
+export function checkstatus(status,time) {
+  if (status == "Aproved" && time != 0) {
+    return 'btn btn-md buttons status';
+  }
+  else {
+    return 'hidden'
+  }
+}
+
+export function checkshowbutton(status,time) {
+  if (status == "Aproved" && time != 0) {
+    return 'hidden';
+  }
+  else {
+    return 'status2'
+  }
+}
+
+export function checkcolor(status) {
+  if (status == "Pending") {
+    return 'warning';
+  }
+  else if (status == "Rejected") {
+    return 'danger'
+  }
+  else {
+    return 'success'
+  }
+}

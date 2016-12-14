@@ -17,7 +17,7 @@ export default class Peer_Review_Page extends React.Component {
             <div className="col-md-9 col-md-offset-1">
               <div className="row">
                 <div className="col-md-12">
-                  <table className="table table-bordered table-striped">
+                  <table className="table table-striped">
                     <thead className="thead">
                       <tr>
                         <th>#</th>

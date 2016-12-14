@@ -1,8 +1,10 @@
 import React from 'react';
+import View_log_Entry from './MacroS_PeerR/View_log_Entry.js'
 
 export default class ViewLog extends React.Component{
 
 render(){
+
   return (
     <div className ="container-fluid">
       <div className = "row title">
@@ -13,7 +15,7 @@ render(){
       <table className="table">
         <thead>
           <tr>
-            <th>Time (12/10/2016) </th>
+            <th>Time </th>
             <th>UserName </th>
             <th>Macro Name</th>
             <th>Macro Status</th>
@@ -21,52 +23,11 @@ render(){
           </tr>
         </thead>
         <tbody>
-          <tr className="success">
-            <td>9:00 am</td>
-            <td>Zhongce Ji</td>
-            <td>View Car Tables</td>
-            <td>
-              <button className="btn btn-link btn-md Approve" type="button">Approved</button>
-            </td>
-            <td>9:01 am</td>
-          </tr>
-          <tr className="success">
-            <td>9:05 am</td>
-            <td>Logan Rennick</td>
-            <td>Update Life Policy</td>
-            <td>
-              <button className="btn btn-link btn-md Approve" type="button">Approved</button>
-            </td>
-            <td>9:07 am</td>
-          </tr>
-          <tr className="danger">
-            <td>9:10 am</td>
-            <td>Tim Addai</td>
-            <td>Delete Life Policy</td>
-            <td>
-              <button className="btn btn-link btn-md Approve" type="button">Rejected</button>
-            </td>
-            <td>9:11 pm </td>
-          </tr>
-
-          <tr className="warning">
-            <td>9:12 am</td>
-            <td>Eric Gendreau</td>
-            <td>Update Housing Policy</td>
-            <td>
-              <button className="btn btn-link btn-md Approve" type="button">Pending</button>
-            </td>
-            <td>Awaiting response</td>
-          </tr>
-          <tr className="active">
-            <td>9:15 am</td>
-            <td>Jason Lee</td>
-            <td>Add New Housing Table</td>
-            <td>
-              <button className="btn btn-link btn-md Approve" type="button">Approved</button>
-            </td>
-            <td>In progress</td>
-          </tr>
+          <View_log_Entry date={1452668480000} status="Aproved" username="tim" macroname="View Car Tables" finishtime={1453668480000} data="This is my data"/>
+          <View_log_Entry date={1453668480000} status="Aproved" username="Logan Rennick" macroname="Update Life Policy" finishtime={1472668480000} data="This is my data"/>
+          <View_log_Entry date={1472668480000} status="Rejected" username="Tim Addai" macroname="Delete Life Policy" finishtime={1482668480000} data=""/>
+          <View_log_Entry date={1482668480000} status="Pending" username="Eric Gendreau" macroname="Update Housing Policy" finishtime={0} data=""/>
+          <View_log_Entry date={1492668480000} status="Approved" username="Jason Lee" macroname="Add New Housing Table" finishtime={0} data=""/>
         </tbody>
       </table>
     </div>

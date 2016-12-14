@@ -11,6 +11,15 @@ body
     margin-top:70px;
     position: absolute;
   }
+
+.form-signin button{
+    margin-top: 10px;
+  }
+
+.form-signin select{
+    margin-left: 5px;
+  }
+
 .panel-default {
 opacity: 0.7;
 /*margin-top:30px;*/
@@ -44,8 +53,6 @@ opacity: 0.7;
       bottom: 0;
       left: 0;
   }
-
-
 
 #login_register_btn{
 margin-top:auto;

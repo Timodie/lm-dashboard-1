@@ -2,18 +2,37 @@ body{
     background-color: #FFFFFF;
 
 }
-.Approve:hover{
-  border: 10px;
+
+.status{
+  width: 100px;
+  border: none;
+  text-decoration: none;
+  background-color: inherit;
+  text-align: center;
+}
+
+.status2{
+  width: 100px;
+  border: none;
+  background-color: inherit;
+  text-align: center;
+}
+
+.status:hover{
+  width: 100px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
   background-color: inherit;
   -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.75);
-  transition-duration: 1s;
+  transition-duration: 0.4s;
 }
 
-.Approve:active,
-.Approve:visited,
-.Approve:focus{
+.status:active,
+.status:visited,
+.status:focus{
   border: none !important;
   outline: none !important;
 }
