@@ -4,6 +4,7 @@ import Macro_Status_Page from './Components/Macro_Status_Dev_page.js';
 import Peer_Review_Page from './Components/Peer_Review_Adm_page.js';
 import ViewLog from './Components/ViewLog.js';
 import Navbar from './Components/navbar.js';
+import NavbarDev from './Components/navbar_Dev.js';
 import SignIn from './Components/signin.js';
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 
@@ -19,6 +20,7 @@ class macro_status_page extends React.Component {
     );
   }
 }
+
 class view_log_page extends React.Component {
   render() {
     return (
@@ -30,6 +32,18 @@ class view_log_page extends React.Component {
     );
   }
 }
+
+class navbardev extends React.Component {
+  render() {
+    return (
+      <div>
+        <NavbarDev />
+
+      </div>
+    );
+  }
+}
+
 class peer_review_page extends React.Component {
   render() {
     return (
@@ -45,7 +59,7 @@ class sign_in_page extends React.Component{
 render(){
   return(
       <div>  <link href ="css/sign-in-style" rel ="stylesheet" />
-        <SignIn/> </div>
+        <SignIn /> </div>
   );
 }
 }
@@ -75,7 +89,7 @@ ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       {/* Show the Feed at / */}
-      <IndexRoute component={main_page} />
+      <IndexRoute component={sign_in_page} />
       <Route path="Main" component={main_page} />
       <Route path="Macro_Status" component={macro_status_page} />
       <Route path="Peer_Review" component={peer_review_page} />
