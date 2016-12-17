@@ -2,12 +2,13 @@
 
 ### Steps to run the server:
 
-1. Install Node.js in you local machine
-2. Clone repository
-3. Run **"npm install"**
-4. Run **"node app.js"**
+1. Go to **client** folder and run command **"npm install"**
+2. After installing, run **"npm run build"** and then **"npm run watch"**. Do not close this window!
+3. Open a new terminal tab/window, then go to **server** folder and run **"npm install"**
+4. Finally, run **"node app.js"** in the same folder.
 
 if everything good, you will get:
-**Example app listening on port 3000**
+1. **Example app listening on port 3000**
+2. The exact window you saw in the last presentation.
 
-NOTE: ALWAY REMEMBER *'npm install new_packge_name --save'* WHEN INSTALLING NEW PACKAGE!!!
+NOTE: ALWAY REMEMBER TO RUN *'npm install new_packge_name --save'* WHEN INSTALLING NEW PACKAGE!!!
