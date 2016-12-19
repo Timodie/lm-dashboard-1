@@ -6,7 +6,7 @@ var pool = mysql.createPool({
   password : 'xxx',
   database : 'dummy'
 });
-
+//format is req.user.(user_id, role, username, password)
 exports.findByUsername = function(username, cb) {
     pool.query('SELECT * from user where username = \'' + username + '\';',
         function(error, results, fields) {
