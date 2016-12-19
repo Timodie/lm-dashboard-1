@@ -20,7 +20,7 @@ export default class View_log_Entry extends React.Component {
     }
 
     checkAR(status,time){
-      if (status == "Aproved" && time != 0) {
+      if (status == "Approved" && time != 0) {
         return false;
       }
       else if (status == "Rejected" && time != 0) {
@@ -41,7 +41,7 @@ export default class View_log_Entry extends React.Component {
     }
 
     checkAP(status,time){
-      if (status == "Aproved" && time == 0) {
+      if (status == "Approved" && time == 0) {
         return false;
       }
       else {

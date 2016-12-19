@@ -3,6 +3,7 @@ var flash = require('connect-flash');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var permission = require('permission');
+var bodyParser = require('body-parser');
 var db = require('./db');
 
 passport.use(new Strategy(
@@ -102,3 +103,4 @@ app.get('/logout',
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
+

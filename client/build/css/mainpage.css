@@ -15,3 +15,9 @@
 .go-right{
   float: right;
 }
+h1{
+  font-family: 'Merriweather', serif;
+}
+.thisglyph{
+  padding-right: 15px !important;
+}
