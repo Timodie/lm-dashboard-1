@@ -10,7 +10,7 @@ export default class MainPanel extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <h1>Main Page</h1>
+          <h1 className ="merriweather">Home</h1>
         </div>
       <ul className="nav nav-pills nav-stacked col-md-2">
         <li className="active"><a href="#tab_a" data-toggle="pill">View Data</a></li>
@@ -81,13 +81,13 @@ export default class MainPanel extends React.Component {
                       <div className = "col-md-4">
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-ok" aria-hidden="true" ></span>
+                            <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true" ></span>
                              Submit
                           </button>
                         </div>
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                            <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
                              Reset
                           </button>
                         </div>
@@ -162,14 +162,14 @@ export default class MainPanel extends React.Component {
                       <div className = "col-md-4">
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg" >
-                            <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                             Submit
+                            <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
+                                Submit
                           </button>
                         </div>
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                             Reset
+                            <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
+                                Reset
                           </button>
                         </div>
                       </div>
@@ -254,13 +254,13 @@ export default class MainPanel extends React.Component {
                       <div className = "col-md-4">
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
                              Submit
                           </button>
                         </div>
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                            <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
                              Reset
                           </button>
                         </div>
@@ -315,13 +315,13 @@ export default class MainPanel extends React.Component {
                       <div className = "col-md-4">
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-ok" aria-hidden="true" ></span>
+                            <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true" ></span>
                              Submit
                           </button>
                         </div>
                         <div className = "row reset">
                           <button type="button" className="btn btn-default btn-lg">
-                            <span className="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                            <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
                              Reset
                           </button>
                         </div>
