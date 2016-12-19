@@ -1,19 +1,17 @@
 var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'host',
-  user     : 'user',
-  password : 'password',
-  database : 'mysql'
+var pool = mysql.createPool({
+  connectionLimit : 10,
+  host     : '138.197.32.168',
+  user     : 'xxx',
+  password : 'xxx',
+  database : 'dummy'
 });
 
-
-
 exports.findByUsername = function(username, cb) {
-    connection.connect();
-    connection.query('SELECT * where username =' + username,
+    pool.query('SELECT * from user where username = \'' + username + '\';',
         function(error, results, fields) {
             if (error){
-                cb(err, null)
+                cb(error, null)
             }
             if (results == null){
                 cb(null, null);
@@ -23,19 +21,15 @@ exports.findByUsername = function(username, cb) {
             }
         }
     );
-    connection.end();
 }
 
 exports.findById = function(id, cb) {
-    connection.connect();
-    var idx = id - 1;
-    connection.query('SELECT * where userid =' + idx,
+    pool.query('SELECT * from user where user_id = \'' + id +'\';',
         function(error, results, fields) {
             if (error){
-                cb(err, null)
+                cb(error, null)
             }
             if (results == null){
-
                 cb(null, null);
             }
             else{
@@ -43,6 +37,4 @@ exports.findById = function(id, cb) {
             }
         }
     );
-    connection.end();
 }
-
