@@ -4,7 +4,7 @@ var pool = mysql.createPool({
   host     : '138.197.32.168',
   user     : 'xxx',
   password : 'xxx',
-  database : 'CS320'
+  database : 'dummy'
 });
 var result = ""
 exports.approve = function(uid, mid, cb) {
@@ -20,8 +20,8 @@ exports.approve = function(uid, mid, cb) {
     );
 }
 
-exports.getLogs = function(startid, endid, cb) {
-	pool.query('SELECT * from test WHERE ID BETWEEN ' + startid + ' AND ' + endid + ';',
+exports.getLogs = function(date, cb) {
+	pool.query('SELECT * from log WHERE date_submitted =' + date + ';',
         function(error, results, fields) {
             if (error){
                 cb(error, null)
