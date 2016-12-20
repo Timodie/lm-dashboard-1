@@ -5,25 +5,41 @@ export default class MainPanel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      approver_field: "All",
-      approver_field2: "All",
+      approver_field: "",
+      approver_field2: "",
       macroname_field : "",
       macroname_field2 : "",
+      date : false,
       date_field : "",
+      time : false,
       time_field : "",
+      auditid : false,
       auditid_field : "",
+      description : false,
       description_field : "",
+      runname : false,
       runname_field : "",
+      valstart : false,
       valstart_field : "",
+      valend : false,
       valend_field : "",
+      groupnum : false,
       groupnum_field : "",
+      sladate : false,
       sladate_field : "",
+      slatime : false,
       slatime_field : "",
+      asid : false,
       asid_field : "",
+      dsid : false,
       dsid_field : "",
+      runname2 : false,
       runname_field2 : "",
+      dsid2 : false,
       dsid_field2 : "",
+      groupnum2 : false,
       groupnum_field2 : "",
+      statuscode : false,
       statuscode_field : ""
     };
   }
@@ -31,6 +47,9 @@ export default class MainPanel extends React.Component {
   handleMacro(e) {
     e.preventDefault();
     this.setState({macroname_field: e.target.value});
+    if (this.state.macroname_field == "Schedule Start time by Run Name and Audit ID"){
+      this.setState({runname:true, auditid:true});
+    }
   }
 
   handleMacro2(e) {
