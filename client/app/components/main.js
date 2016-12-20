@@ -2,6 +2,18 @@ import React from 'react';
 
 export default class MainPanel extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      macronames : {},
+      macroname_field : "",
+      date_field : "",
+      time_field : "",
+      auditid_field : "",
+      description_field : ""
+    };
+  }
+
   componentDidMount() {
     $('.selectpicker').selectpicker('render');
   }
@@ -46,12 +58,25 @@ export default class MainPanel extends React.Component {
 
                         <div className = "row select">
                           <div className ="col-md-4">
+                            Approver
+                          </div>
+                          <div className ="col-md-8">
+                              <select className="selectpicker" data-live-search="true" >
+                               <option>All</option>
+                               <option>ericgendreau</option>
+                               <option>timmodie</option>
+                              </select>
+                          </div>
+                         </div>
+
+                        <div className = "row select">
+                          <div className ="col-md-4">
                             Date
                           </div>
                           <div className ="col-md-8">
 
                             <div className="input-group" >
-                              <input type="text" className="form-control" placeholder="Date" aria-describedby="sizing-addon2 " />
+                              <input type="text" className="form-control" placeholder="Date" value={this.state.date_field} aria-describedby="sizing-addon2 " />
                             </div>
                           </div>
                          </div>
@@ -128,6 +153,19 @@ export default class MainPanel extends React.Component {
                              </select>
                          </div>
                         </div>
+
+                        <div className = "row select">
+                          <div className ="col-md-4">
+                            Approver
+                          </div>
+                          <div className ="col-md-8">
+                              <select className="selectpicker" data-live-search="true" >
+                               <option>All</option>
+                               <option>ericgendreau</option>
+                               <option>timmodie</option>
+                              </select>
+                          </div>
+                         </div>
 
                         <div className = "row select">
                           <div className ="col-md-4">
