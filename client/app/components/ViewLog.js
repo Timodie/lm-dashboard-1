@@ -4,8 +4,31 @@ import View_log_Entry from './MacroS_PeerR/View_log_Entry.js'
 
 export default class ViewLog extends React.Component{
 
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      Year : '',
+      Month : '',
+      Date : ''
+    };
+  }
 
+  onselect(newdate){
+    this.setState({
+      Year : newdate._d.getFullYear(),
+      Month : newdate._d.getMonth(),
+      Date : newdate._d.getDate()
+    })
+
+  }
+
+  onSubmit(e){
+    e.preventDefault();
+    // console.log(this.state.Year);
+    // console.log(this.state.Month);
+    // console.log(this.state.Date);
+    // Here we have date of of the select then we can send the date to the server to get the logs we want
+  }
 
 
 render(){
@@ -39,8 +62,8 @@ render(){
           </table>
         </div>
         <div className="col-md-3">
-            <Calendar />
-              <button type="button" className="btn btn-default searchbutton">View logs on select date</button>
+            <Calendar onSelect={(newdate) => this.onselect(newdate)}/>
+              <button type="button" className="btn btn-default searchbutton" onClick={(e) => this.onsubmit(e)}>View logs on select date</button>
         </div>
       </div>
     </div>
