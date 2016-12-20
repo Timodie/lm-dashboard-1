@@ -8,6 +8,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "express-jsonschema": "^1.1.6",
     "express-session": "^1.14.2",
     "mysql": "^2.12.0",
     "passport": "^0.3.2",
@@ -33,4 +34,3 @@
   },
   "homepage": "https://github.com/cs320-f16/lm-dashboard#readme"
 }
-
