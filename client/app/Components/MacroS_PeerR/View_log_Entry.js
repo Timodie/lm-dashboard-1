@@ -87,8 +87,8 @@ export default class View_log_Entry extends React.Component {
           <td>{this.props.username}</td>
           <td>{this.props.macroname}</td>
           <td>
-            <div className={checkstatus(this.props.status, this.props.date)} onClick={(e) => this.openModal(e)}>{this.props.status}</div>
-            <div className={checkshowbutton(this.props.status, this.props.date)}>{this.props.status}</div>
+            <div className={checkstatus(this.props.status, this.props.finishtime)} onClick={(e) => this.openModal(e)}>{this.props.status}</div>
+            <div className={checkshowbutton(this.props.status, this.props.finishtime)}>{this.props.status}</div>
             <Modal isOpen={this.state.modalIsOpen} style={customStyles} contentLabel="data">
               <center>
                 <h2 ref="subtitle">Data Information</h2>
@@ -98,9 +98,9 @@ export default class View_log_Entry extends React.Component {
             </Modal>
           </td>
           <td>
-            <div className={hideElement(this.checkAR(this.props.status, this.props.date))}>{unixTimeToString(this.props.finishtime)}</div>
-            <div className={hideElement(this.checkAP(this.props.status, this.props.date))}>Awaiting response</div>
-            <div className={hideElement(this.checkPending(this.props.status, this.props.date))}>In progress</div>
+            <div className={hideElement(this.checkAR(this.props.status, this.props.finishtime))}>{unixTimeToString(this.props.finishtime)}</div>
+            <div className={hideElement(this.checkAP(this.props.status, this.props.finishtime))}>Awaiting response</div>
+            <div className={hideElement(this.checkPending(this.props.status, this.props.finishtime))}>In progress</div>
           </td>
         </tr>
       )

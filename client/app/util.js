@@ -17,7 +17,7 @@ export function hideElement(shouldHide) {
 }
 
 export function checkstatus(status,time) {
-  if (status == "Aproved" && time != 0) {
+  if (status == "Approved" && time != 0) {
     return 'btn btn-md buttons status';
   }
   else {
@@ -26,7 +26,7 @@ export function checkstatus(status,time) {
 }
 
 export function checkshowbutton(status,time) {
-  if (status == "Aproved" && time != 0) {
+  if (status == "Approved" && time != 0) {
     return 'hidden';
   }
   else {
@@ -43,5 +43,13 @@ export function checkcolor(status) {
   }
   else {
     return 'success'
+  }
+}
+
+export function showfield(show){
+  if (show) {
+    return '';
+  } else {
+    return 'hidden';
   }
 }
