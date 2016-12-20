@@ -6,6 +6,7 @@ import ViewLog from './Components/ViewLog.js';
 import Navbar from './Components/navbar.js';
 import NavbarDev from './Components/navbar_Dev.js';
 import SignIn from './Components/signin.js';
+import ErrorBanner from './Components/errorbanner.js';
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 
 import MainPanel from './Components/main.js';
@@ -70,6 +71,7 @@ class App extends React.Component {
       return (
         <div>
           <Navbar />
+          <ErrorBanner />
           {this.props.children}
         </div>
       )
@@ -79,6 +81,7 @@ class App extends React.Component {
       return (
         <div>
           <NavbarDev />
+          <ErrorBanner />
           {this.props.children}
         </div>
       )
@@ -88,6 +91,7 @@ class App extends React.Component {
       return (
         <div>
           <Navbar />
+          <ErrorBanner />
           {this.props.children}
         </div>
       )
