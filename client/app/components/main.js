@@ -1,5 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
+import {showfield} from '../util.js';
+
 
 export default class MainPanel extends React.Component {
 
@@ -265,8 +267,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select ">
-
+                <div className = {"row select " + showfield(this.state.runname)}>
                   <div className ="col-md-4">
                     Run Name
                   </div>
@@ -276,7 +277,7 @@ export default class MainPanel extends React.Component {
 
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.date)}>
                   <div className ="col-md-4">
                     Schedule Start Time
                   </div>
@@ -285,7 +286,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.valstart)}>
                   <div className ="col-md-4">
                     Valuation Start
                   </div>
@@ -294,7 +295,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.valend)}>
                   <div className ="col-md-4">
                     Valuation End Date
                   </div>
@@ -304,7 +305,7 @@ export default class MainPanel extends React.Component {
                 </div>
 
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.auditid)}>
                   <div className ="col-md-4">
                     Audit ID
                   </div>
@@ -313,7 +314,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.groupnum)}>
                   <div className ="col-md-4">
                     Group Number
                   </div>
@@ -322,7 +323,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.statuscode)}>
                   <div className ="col-md-4">
                     Status Code
                   </div>
@@ -331,7 +332,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.sladate)}>
                   <div className ="col-md-4">
                     SLA Date
                   </div>
@@ -340,7 +341,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.slatime)}>
                   <div className ="col-md-4">
                     SLA Time
                   </div>
@@ -349,7 +350,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.dsid)}>
                   <div className ="col-md-4">
                     Driver Step ID
                   </div>
@@ -358,7 +359,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.asid)}>
                   <div className ="col-md-4">
                     Active Step Indicator
                   </div>
@@ -367,7 +368,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.description)}>
                   <div className ="col-md-4">
                     Description
                   </div>
@@ -416,7 +417,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.runname2)}>
                   <div className ="col-md-4">
                     Run Name
                   </div>
@@ -425,7 +426,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.groupnum2)}>
                   <div className ="col-md-4">
                     Group Number
                   </div>
@@ -434,7 +435,7 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = {"row select " + showfield(this.state.dsid2)}>
                   <div className ="col-md-4">
                     Driver Step ID
                   </div>
