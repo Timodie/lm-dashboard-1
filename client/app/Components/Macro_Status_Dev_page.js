@@ -9,7 +9,7 @@ export default class Macro_Status_Page extends React.Component {
       <div className="container">
         <div className="row title">
           <div className="col-md-12 pull-left">
-              <h1>Macro Status (Developer)</h1>
+              <h1>Macro Status</h1>
           </div>
         </div>
         <div className="row">

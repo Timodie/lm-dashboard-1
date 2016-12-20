@@ -66,8 +66,8 @@ export default class Navbar extends React.Component {
           </div>
           <div className="collapse navbar-collapse pull-right" >
             <ul className="nav navbar-nav">
-              <button type="button" className="btn btn-default buttons" onClick={(e) => this.gotomain(e)}>Main</button>
-              <button type="button" className="btn btn-default buttons" onClick={(e) => this.gotoViewlog(e)}>View Log</button>
+              <button type="button" className="btn btn-default buttons" onClick={(e) => this.gotomain(e)}>Home</button>
+              <button type="button" className="btn btn-default buttons" onClick={(e) => this.gotoViewlog(e)}>View Logs</button>
               <button type="button" className="btn btn-default buttons" onClick={(e) => this.gotoPeer_Review(e)}>Peer Review</button>
               <button type="button" className="btn btn-default buttons" onClick={(e) => this.gotoSign(e)}>Sign Out</button>
             </ul>

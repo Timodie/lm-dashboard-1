@@ -206,6 +206,7 @@ export default class MainPanel extends React.Component {
     window.location.reload();
 }
 
+
   render() {
 
     var UpdateOptions = [

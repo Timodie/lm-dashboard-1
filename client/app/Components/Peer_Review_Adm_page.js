@@ -9,7 +9,7 @@ export default class Peer_Review_Page extends React.Component {
       <div className="container">
         <div className="row title">
           <div className="col-md-12 pull-left">
-            <h1>Peer Review (Administrators)</h1>
+            <h1>Peer Review</h1>
           </div>
         </div>
         <div className="row">
