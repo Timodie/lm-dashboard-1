@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "bootstrap-select": "^1.12.1",
+    "rc-calendar": "^7.5.2",
     "react-select": "^1.0.0-rc.2"
   }
 }

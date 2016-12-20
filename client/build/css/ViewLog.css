@@ -3,6 +3,18 @@ body{
 
 }
 
+.searchbutton{
+  margin-top: 15px;
+  width: 257px;
+}
+
+
+.searchbutton:active,
+.searchbutton:visited,
+.searchbutton:focus{
+  outline: none !important;
+}
+
 .status{
   width: 100px;
   border: none;
