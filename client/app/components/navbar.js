@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react';
 export default class Navbar extends React.Component {
 
   constructor(props) {
