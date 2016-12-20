@@ -225,8 +225,8 @@ export default class MainPanel extends React.Component {
     var DeleteOptions = [
       { value: 'All Schedule entries by Run Name', label: 'All Schedule entries by Run Name'},
       { value: 'All Step entries by Run Name', label: 'All Step entries by Run Name'},
-      { value: 'All Step entries by Run Name and Group Number', label: 'All Step entries by Run Name and Group Number'},
-      { value: 'All Step entries by Run Name and Driver Step ID', label: 'All Step entries by Run Name and Driver Step ID'},
+      { value: 'All Schedule entries by Run Name and Group Number', label: 'All Schedule entries by Run Name and Group Number'},
+      { value: 'All Schedule entries by Run Name and Driver Step ID', label: 'All Schedule entries by Run Name and Driver Step ID'},
       { value: 'All Step Detail entries by Run Name', label: 'All Step Detail entries by Run Name'}
     ];
     var Approver = [
@@ -247,7 +247,7 @@ export default class MainPanel extends React.Component {
           <div className="tab-pane active" id="tab_c">
             <h4>Update</h4>
             <div className = "row">
-              <div className = "col-md-6">
+              <div className = "col-md-10">
 
                 <div className = "row select">
                   <div className ="col-md-4">
@@ -376,28 +376,27 @@ export default class MainPanel extends React.Component {
                       <input type="text" className="form-control" placeholder="Description" value={this.state.description_field} onChange={(e) => this.handleDescription(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
-
               </div>
-              <div className = "col-md-4">
                 <div className = "row reset">
-                  <button type="button" className="btn btn-default btn-lg">
-                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
-                    Submit
-                  </button>
+                  <div className ="col-md-3">
+                    <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.refreshPage(e)}>
+                      <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
+                      Reset
+                    </button>
+                  </div>
+                  <div className ="col-md-3 col-md-offset-5">
+                    <button type="button" className="btn btn-default btn-md">
+                      <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
+                      Submit
+                    </button>
+                  </div>
                 </div>
-                <div className = "row reset">
-                  <button type="button" className="btn btn-default btn-lg" onClick ={(e) => this.refreshPage(e)}>
-                    <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
-                    Reset
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
           <div className="tab-pane" id="tab_d">
             <h4>Delete</h4>
             <div className = "row">
-              <div className = "col-md-6">
+              <div className = "col-md-10">
 
                 <div className = "row select">
                   <div className ="col-md-4">
@@ -443,23 +442,21 @@ export default class MainPanel extends React.Component {
                       <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field2} onChange={(e) => this.handleDSID2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
-
-
               </div>
-              <div className = "col-md-4">
-                <div className = "row reset">
-                  <button type="button" className="btn btn-default btn-lg">
-                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true" ></span>
+              <div className = "row reset">
+                <div className ="col-md-3">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.refreshPage(e)}>
+                    <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
+                    Reset
+                  </button>
+                </div>
+                <div className ="col-md-3 col-md-offset-5">
+                  <button type="button" className="btn btn-default btn-md">
+                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
                     Submit
                   </button>
                 </div>
-                <div className = "row reset">
-                  <button type="button" className="btn btn-default btn-lg" onClick ={(e) => this.refreshPage(e)}>
-                    <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
-                             Reset
-                          </button>
-                        </div>
-                      </div>
+              </div>
                      </div>
               </div>
       </div>
