@@ -47,14 +47,69 @@ export default class MainPanel extends React.Component {
   handleMacro(e) {
     e.preventDefault();
     this.setState({macroname_field: e.target.value});
-    if (this.state.macroname_field == "Schedule Start time by Run Name and Audit ID"){
-      this.setState({runname:true, auditid:true});
-    }
+    this.setState({date : false, time : false, auditid : false, description : false, runname : false, valstart : false, valend : false,  groupnum : false,
+    sladate : false, slatime : false, asid : false, dsid : false, runname2 : false, dsid2 : false, groupnum2 : false, statuscode : false});
+    if (e.target.value === "Schedule Start time by Run Name and Audit ID"){
+      this.setState({runname:true, auditid:true, time:true});
+      }
+    if (e.target.value === "Status Code by Run Name and Audit ID"){
+      this.setState({runname:true, auditid:true, statuscode:true});
+      }
+    if (e.target.value === "Valuation End Date by Run Name and Audit ID"){
+        this.setState({runname:true, auditid:true, valend:true});
+      }
+    if (e.target.value === "Valuation Start time by Run Name and Audit ID"){
+        this.setState({runname:true, auditid:true, valstart:true});
+      }
+    if (e.target.value === "SLA Date and Time by Audit ID"){
+        this.setState({sladate:true, slatime:true, auditid:true, description:true});
+      }
+    if (e.target.value === "SLA Date and Time by Run Name"){
+        this.setState({runname:true, slatime:true});
+      }
+    if (e.target.value === "Historical SLA Date and Time by Run Name"){
+          this.setState({runname:true, slatime:true});
+      }
+    if (e.target.value === "Run Status Code by Run Name and Group Number"){
+        this.setState({runname:true, groupnum:true, statuscode:true});
+      }
+    if (e.target.value === "Run Status Code by Run Name and Driver Step Detail ID"){
+        this.setState({runname:true, dsid:true, statuscode:true});
+      }
+    if (e.target.value === "Active Step Indicator by Driver Step ID"){
+        this.setState({dsid:true, asid:true});
+      }
+    if (e.target.value === "Active Step Indicator by Run Name and Driver Step ID"){
+        this.setState({runname:true, dsid:true, asid:true});
+      }
+    if (e.target.value === "Active Step Indicator by Run Name"){
+        this.setState({runname:true, asid:true});
+      }
+    if (e.target.value === "Active Step Indicator by Run Name and Group Number"){
+        this.setState({runname:true, groupnum:true, asid:true});
+      }
   }
 
   handleMacro2(e) {
     e.preventDefault();
     this.setState({macroname_field2: e.target.value});
+    this.setState({date : false, time : false, auditid : false, description : false, runname : false, valstart : false, valend : false,  groupnum : false,
+    sladate : false, slatime : false, asid : false, dsid : false, runname2 : false, dsid2 : false, groupnum2 : false, statuscode : false});
+    if (e.target.value === "All Schedule entries by Run Name"){
+      this.setState({runname2:true});
+      }
+    if (e.target.value === "All Step entries by Run Name"){
+        this.setState({runname2:true});
+      }
+    if (e.target.value === "All Schedule entries by Run Name and Group Number"){
+          this.setState({runname2:true, groupnum2:true});
+    }
+    if (e.target.value === "All Schedule entries by Run Name and Driver Step ID"){
+        this.setState({runname2:true, dsid2:true});
+      }
+   if (e.target.value === "All Step Detail entries by Run Name"){
+          this.setState({runname2:true});
+      }
   }
 
   handleApprover(e) {
@@ -146,6 +201,7 @@ export default class MainPanel extends React.Component {
     e.preventDefault();
     this.setState({statuscode_field: e.target.value});
   }
+
   refreshPage(e){
     e.preventDefault();
     window.location.reload();
@@ -183,6 +239,7 @@ export default class MainPanel extends React.Component {
                       <option>Valuation Start time by Run Name and Audit ID</option>
                       <option>SLA Date and Time by Audit ID</option>
                       <option>SLA Date and Time by Run Name</option>
+                      <option>Historical SLA Date and Time by Run Name</option>
                       <option>Run Status Code by Run Name and Group Number</option>
                       <option>Run Status Code by Run Name and Driver Step Detail ID</option>
                       <option>Active Step Indicator by Driver Step ID</option>
@@ -206,7 +263,8 @@ export default class MainPanel extends React.Component {
                   </div>
                 </div>
 
-                <div className = "row select">
+                <div className = "row select ">
+
                   <div className ="col-md-4">
                     Run Name
                   </div>
@@ -216,6 +274,7 @@ export default class MainPanel extends React.Component {
                       <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field} onChange={(e) => this.handleRunName(e)} aria-describedby="sizing-addon2 " />
                     </div>
                   </div>
+
                 </div>
 
                 <div className = "row select">
