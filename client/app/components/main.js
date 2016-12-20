@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 export default class MainPanel extends React.Component {
 
@@ -44,82 +45,78 @@ export default class MainPanel extends React.Component {
     };
   }
 
-  handleMacro(e) {
-    e.preventDefault();
-    this.setState({macroname_field: e.target.value});
+  handleMacro(newvalue) {
+    this.setState({macroname_field: newvalue});
     this.setState({date : false, time : false, auditid : false, description : false, runname : false, valstart : false, valend : false,  groupnum : false,
     sladate : false, slatime : false, asid : false, dsid : false, runname2 : false, dsid2 : false, groupnum2 : false, statuscode : false});
-    if (e.target.value === "Schedule Start time by Run Name and Audit ID"){
+    if (newvalue === "Schedule Start time by Run Name and Audit ID"){
       this.setState({runname:true, auditid:true, time:true});
       }
-    if (e.target.value === "Status Code by Run Name and Audit ID"){
+    if (newvalue === "Status Code by Run Name and Audit ID"){
       this.setState({runname:true, auditid:true, statuscode:true});
       }
-    if (e.target.value === "Valuation End Date by Run Name and Audit ID"){
+    if (newvalue === "Valuation End Date by Run Name and Audit ID"){
         this.setState({runname:true, auditid:true, valend:true});
       }
-    if (e.target.value === "Valuation Start time by Run Name and Audit ID"){
+    if (newvalue === "Valuation Start time by Run Name and Audit ID"){
         this.setState({runname:true, auditid:true, valstart:true});
       }
-    if (e.target.value === "SLA Date and Time by Audit ID"){
+    if (newvalue === "SLA Date and Time by Audit ID"){
         this.setState({sladate:true, slatime:true, auditid:true, description:true});
       }
-    if (e.target.value === "SLA Date and Time by Run Name"){
+    if (newvalue === "SLA Date and Time by Run Name"){
         this.setState({runname:true, slatime:true});
       }
-    if (e.target.value === "Historical SLA Date and Time by Run Name"){
+    if (newvalue === "Historical SLA Date and Time by Run Name"){
           this.setState({runname:true, slatime:true});
       }
-    if (e.target.value === "Run Status Code by Run Name and Group Number"){
+    if (newvalue === "Run Status Code by Run Name and Group Number"){
         this.setState({runname:true, groupnum:true, statuscode:true});
       }
-    if (e.target.value === "Run Status Code by Run Name and Driver Step Detail ID"){
+    if (newvalue === "Run Status Code by Run Name and Driver Step Detail ID"){
         this.setState({runname:true, dsid:true, statuscode:true});
       }
-    if (e.target.value === "Active Step Indicator by Driver Step ID"){
+    if (newvalue === "Active Step Indicator by Driver Step ID"){
         this.setState({dsid:true, asid:true});
       }
-    if (e.target.value === "Active Step Indicator by Run Name and Driver Step ID"){
+    if (newvalue === "Active Step Indicator by Run Name and Driver Step ID"){
         this.setState({runname:true, dsid:true, asid:true});
       }
-    if (e.target.value === "Active Step Indicator by Run Name"){
+    if (newvalue === "Active Step Indicator by Run Name"){
         this.setState({runname:true, asid:true});
       }
-    if (e.target.value === "Active Step Indicator by Run Name and Group Number"){
+    if (newvalue === "Active Step Indicator by Run Name and Group Number"){
         this.setState({runname:true, groupnum:true, asid:true});
       }
   }
 
-  handleMacro2(e) {
-    e.preventDefault();
-    this.setState({macroname_field2: e.target.value});
+  handleMacro2(newvalue) {
+    this.setState({macroname_field2: newvalue});
     this.setState({date : false, time : false, auditid : false, description : false, runname : false, valstart : false, valend : false,  groupnum : false,
     sladate : false, slatime : false, asid : false, dsid : false, runname2 : false, dsid2 : false, groupnum2 : false, statuscode : false});
-    if (e.target.value === "All Schedule entries by Run Name"){
+    if (newvalue === "All Schedule entries by Run Name"){
       this.setState({runname2:true});
       }
-    if (e.target.value === "All Step entries by Run Name"){
+    if (newvalue === "All Step entries by Run Name"){
         this.setState({runname2:true});
       }
-    if (e.target.value === "All Schedule entries by Run Name and Group Number"){
+    if (newvalue === "All Schedule entries by Run Name and Group Number"){
           this.setState({runname2:true, groupnum2:true});
     }
-    if (e.target.value === "All Schedule entries by Run Name and Driver Step ID"){
+    if (newvalue === "All Schedule entries by Run Name and Driver Step ID"){
         this.setState({runname2:true, dsid2:true});
       }
-   if (e.target.value === "All Step Detail entries by Run Name"){
+   if (newvalue === "All Step Detail entries by Run Name"){
           this.setState({runname2:true});
       }
   }
 
-  handleApprover(e) {
-    e.preventDefault();
-    this.setState({approver_field: e.target.value});
+  handleApprover(newvalue) {
+    this.setState({approver_field: newvalue});
   }
 
-  handleApprover2(e) {
-    e.preventDefault();
-    this.setState({approver_field2: e.target.value});
+  handleApprover2(newvalue) {
+    this.setState({approver_field2: newvalue});
   }
 
   handleDate(e) {
@@ -207,11 +204,34 @@ export default class MainPanel extends React.Component {
     window.location.reload();
 }
 
-  componentDidMount() {
-    $('.selectpicker').selectpicker('render');
-  }
-
   render() {
+
+    var UpdateOptions = [
+      { value: 'Schedule Start time by Run Name and Audit ID', label: 'Schedule Start time by Run Name and Audit ID'},
+      { value: 'Status Code by Run Name and Audit ID', label: 'Status Code by Run Name and Audit ID'},
+      { value: 'Valuation End Date by Run Name and Audit ID', label: 'Valuation End Date by Run Name and Audit ID'},
+      { value: 'Valuation Start time by Run Name and Audit ID', label: 'Valuation Start time by Run Name and Audit ID'},
+      { value: 'SLA Date and Time by Audit ID', label: 'SLA Date and Time by Audit ID'},
+      { value: 'SLA Date and Time by Run Name', label: 'SLA Date and Time by Run Name'},
+      { value: 'Run Status Code by Run Name and Group Number', label: 'Run Status Code by Run Name and Group Number'},
+      { value: 'Run Status Code by Run Name and Driver Step Detail ID', label: 'Run Status Code by Run Name and Driver Step Detail ID'},
+      { value: 'Active Step Indicator by Driver Step ID', label: 'Active Step Indicator by Driver Step ID'},
+      { value: 'Active Step Indicator by Run Name and Driver Step ID', label: 'Active Step Indicator by Run Name and Driver Step ID'},
+      { value: 'Active Step Indicator by Run Name', label: 'Active Step Indicator by Run Name'},
+      { value: 'Active Step Indicator by Run Name and Group Number', label: 'Active Step Indicator by Run Name and Group Number'}
+    ];
+    var DeleteOptions = [
+      { value: 'All Schedule entries by Run Name', label: 'All Schedule entries by Run Name'},
+      { value: 'All Step entries by Run Name', label: 'All Step entries by Run Name'},
+      { value: 'All Step entries by Run Name and Group Number', label: 'All Step entries by Run Name and Group Number'},
+      { value: 'All Step entries by Run Name and Driver Step ID', label: 'All Step entries by Run Name and Driver Step ID'},
+      { value: 'All Step Detail entries by Run Name', label: 'All Step Detail entries by Run Name'}
+    ];
+    var Approver = [
+      { value: 'ericgendreau', label: 'ericgendreau'},
+      { value: 'timmodie', label: 'timmodie'}
+    ]
+
     return (
       <div className="container">
         <div className="row">
@@ -232,21 +252,7 @@ export default class MainPanel extends React.Component {
                     Macro Name
                   </div>
                   <div className ="col-md-8">
-                    <select className="selectpicker" data-live-search="true" value={this.state.macroname_field} onChange={(e) => this.handleMacro(e)} title="Select Update Macro">
-                      <option>Schedule Start time by Run Name and Audit ID</option>
-                      <option>Status Code by Run Name and Audit ID</option>
-                      <option>Valuation End Date by Run Name and Audit ID</option>
-                      <option>Valuation Start time by Run Name and Audit ID</option>
-                      <option>SLA Date and Time by Audit ID</option>
-                      <option>SLA Date and Time by Run Name</option>
-                      <option>Historical SLA Date and Time by Run Name</option>
-                      <option>Run Status Code by Run Name and Group Number</option>
-                      <option>Run Status Code by Run Name and Driver Step Detail ID</option>
-                      <option>Active Step Indicator by Driver Step ID</option>
-                      <option>Active Step Indicator by Run Name and Driver Step ID</option>
-                      <option>Active Step Indicator by Run Name</option>
-                      <option>Active Step Indicator by Run Name and Group Number</option>
-                    </select>
+                    <Select name="selected-state" simpleValue value={this.state.macroname_field} options={UpdateOptions} onChange={(newvalue) => this.handleMacro(newvalue)} />
                   </div>
                 </div>
 
@@ -255,11 +261,7 @@ export default class MainPanel extends React.Component {
                     Approver
                   </div>
                   <div className ="col-md-8">
-                    <select className="selectpicker" data-live-search="true" value={this.state.approver_field} onChange={(e) => this.handleApprover(e)}>
-                      <option>All</option>
-                      <option>ericgendreau</option>
-                      <option>timmodie</option>
-                    </select>
+                    <Select name="selected-state" simpleValue value={this.state.approver_field} options={Approver} onChange={(newvalue) => this.handleApprover(newvalue)} />
                   </div>
                 </div>
 
@@ -269,10 +271,7 @@ export default class MainPanel extends React.Component {
                     Run Name
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field} onChange={(e) => this.handleRunName(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
 
                 </div>
@@ -282,10 +281,7 @@ export default class MainPanel extends React.Component {
                     Schedule Start Time
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Start Time" value={this.state.date_field} onChange={(e) => this.handleDate(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -294,10 +290,7 @@ export default class MainPanel extends React.Component {
                     Valuation Start
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Time" value={this.state.valstart_field} onChange={(e) => this.handleValStart(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -306,10 +299,7 @@ export default class MainPanel extends React.Component {
                     Valuation End Date
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="End Date" value={this.state.valend_field} onChange={(e) => this.handleValEnd(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -319,10 +309,7 @@ export default class MainPanel extends React.Component {
                     Audit ID
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Audit ID" value={this.state.auditid_field} onChange={(e) => this.handleAuditID(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -331,10 +318,7 @@ export default class MainPanel extends React.Component {
                     Group Number
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field} onChange={(e) => this.handleGroupNum(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -343,10 +327,7 @@ export default class MainPanel extends React.Component {
                     Status Code
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Status Code" value={this.state.statuscode_field} onChange={(e) => this.handleStatusCode(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -355,10 +336,7 @@ export default class MainPanel extends React.Component {
                     SLA Date
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="SLA Date" value={this.state.sladate_field} onChange={(e) => this.handleSLADate(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -367,10 +345,7 @@ export default class MainPanel extends React.Component {
                     SLA Time
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="SLA Time" value={this.state.slatime_field} onChange={(e) => this.handleSLATime(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -379,10 +354,7 @@ export default class MainPanel extends React.Component {
                     Driver Step ID
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field} onChange={(e) => this.handleDSID(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -391,10 +363,7 @@ export default class MainPanel extends React.Component {
                     Active Step Indicator
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Active Step Indicator" value={this.state.asid_field} onChange={(e) => this.handleASID(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -403,10 +372,7 @@ export default class MainPanel extends React.Component {
                     Description
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Description" value={this.state.description_field} onChange={(e) => this.handleDescription(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -437,13 +403,7 @@ export default class MainPanel extends React.Component {
                     Macro Name
                   </div>
                   <div className ="col-md-8">
-                    <select className="selectpicker" data-live-search="true" value={this.state.macroname_field2} onChange={(e) => this.handleMacro2(e)} title="Select Delete Macro">
-                      <option>All Schedule entries by Run Name</option>
-                      <option>All Step entries by Run Name</option>
-                      <option>All Step entries by Run Name and Group Number</option>
-                      <option>All Step entries by Run Name and Driver Step ID</option>
-                      <option>All Step Detail entries by Run Name</option>
-                    </select>
+                    <Select name="selected-state" simpleValue value={this.state.macroname_field2} options={DeleteOptions} onChange={(newvalue) => this.handleMacro2(newvalue)} />
                   </div>
                 </div>
 
@@ -452,11 +412,7 @@ export default class MainPanel extends React.Component {
                     Approver
                   </div>
                   <div className ="col-md-8">
-                    <select className="selectpicker" value={this.state.approver_field2} onChange={(e) => this.handleApprover2(e)} data-live-search="true" >
-                      <option>All</option>
-                      <option>ericgendreau</option>
-                      <option>timmodie</option>
-                    </select>
+                    <Select name="selected-state" simpleValue value={this.state.approver_field2} options={Approver} onChange={(newvalue) => this.handleApprover2(newvalue)} />
                   </div>
                 </div>
 
@@ -465,10 +421,7 @@ export default class MainPanel extends React.Component {
                     Run Name
                   </div>
                   <div className ="col-md-8">
-
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field2} onChange={(e) => this.handleRunName2(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -477,9 +430,7 @@ export default class MainPanel extends React.Component {
                     Group Number
                   </div>
                   <div className ="col-md-8">
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field2} onChange={(e) => this.handleGroupNum2(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
@@ -488,9 +439,7 @@ export default class MainPanel extends React.Component {
                     Driver Step ID
                   </div>
                   <div className ="col-md-8">
-                    <div className="input-group" >
                       <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field2} onChange={(e) => this.handleDSID2(e)} aria-describedby="sizing-addon2 " />
-                    </div>
                   </div>
                 </div>
 
