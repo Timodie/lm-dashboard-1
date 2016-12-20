@@ -1,5 +1,36 @@
 //Send the run macro request
 
+export function submitUpdateMacroToServer(userRole,parameters,type,cb){
+  sendXHR('POST','/submitMacro/update'+ userRole,parameters ,
+    //specify contents here
+  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
+  );
+}
+export function submitDeleteMacroToServer(userRole,parameters,type,cb){
+  sendXHR('POST','/submitMacro/delete'+ userRole,parameters ,
+    //specify contents here
+  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
+  );
+}
+export function getMacroStatusCode(userRole,macroname,statusCode,cb){
+  sendXHR('POST','/view_macro_run_status_code',{
+    userRole: userRole,
+    macroname:macroname,
+    statusCode:statusCode
+  },  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
+    );
+}
+export function updateHistory(userRole,cb){
+  sendXHR('POST','/history',userRole,
+  (xhr)=> {cb(JSON.parse(xhr.responseText))
+});
+
+}
+export function getViewLogData(cb){
+  sendXHR('GET','/history',undefined,
+(xhr)=>{cb(JSON.parse(xhr.responseText));
+});
+}
 
 /**
  * Properly configure+send an XMLHttpRequest with error handling, authorization token,

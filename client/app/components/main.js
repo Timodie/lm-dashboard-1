@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {submitMacroToServer} from '../server';
 export default class MainPanel extends React.Component {
 
   constructor(props) {
@@ -130,6 +130,10 @@ export default class MainPanel extends React.Component {
   refreshPage(e){
     e.preventDefault();
     window.location.reload();
+}
+submitMacro(e){
+  e.preventDefault();
+
 }
 
   componentDidMount() {
@@ -336,7 +340,7 @@ export default class MainPanel extends React.Component {
               <div className = "col-md-4">
                 <div className = "row reset">
                   <button type="button" className="btn btn-default btn-lg">
-                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
+                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true" onClick ={(e) => this.submitMacro(e)}></span>
                     Submit
                   </button>
                 </div>
