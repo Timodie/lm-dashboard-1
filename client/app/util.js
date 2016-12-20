@@ -45,3 +45,11 @@ export function checkcolor(status) {
     return 'success'
   }
 }
+
+export function showfield(show){
+  if (show) {
+    return '';
+  } else {
+    return 'hidden';
+  }
+}

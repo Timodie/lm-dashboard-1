@@ -76,13 +76,13 @@ app.post('/approval',
     });
   });
 
-app.get('/logs/:logStart/:logEnd',
+app.get('/logs/:logDay',
   require('permission')(['admin']),
   function(req, res){
-    if (req.params.logStart == null || req.params.logEnd == null) {
+    if (req.params.logDay) {
       //load view
     }
-    db.data.getLogs(req.params.logStart, req.params.logEnd, function(err, results) {
+    db.data.getLogs(req.params.logDay, function(err, results) {
       if (err) { 
         //flash placeholder
         //req.flash('error', 'Could not get logs');
