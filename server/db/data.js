@@ -53,7 +53,10 @@ exports.run = function(uid, mid, cb) {
   );
 }
 
-//Used for submit macro, so don't delete
+/*  DO NOT DELETE --- Used for submitMacro. If modified, will need to modify 
+    submitMacro to reflect changes.
+    TODO: Make changes to reflect changes in db
+*/
 exports.updateDB = function(uid, mid, param, result, status, approver_id, data_submitted, date_approved, date_ran) {
   pool.query('INSERT INTO MACRO(macro_id, user_id, param, result, status, approver_id, date_submitted, date_approved, date_ran) ' +
              'VALUES (' + mid + uid + param + result + status + approver_id + date_submitted + date_approved + date_ran + '); ',

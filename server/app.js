@@ -103,7 +103,7 @@ app.get('/logout',
 macroType is either update or delete. For now these do the same thing.
 We may want to add update and delete as feature in our LOG table so that we
 can easily more easly access Liberty Mutual's DB.
-TODO: macro id, parameters, and approver need to be passed/validated
+TODO: macro id, parameters, and approver need to be properly passed/validated
 */
 app.post('/submitMacro/:macroType', function(req, res) {
     console.log("submitting macro");
