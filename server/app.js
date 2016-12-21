@@ -64,7 +64,7 @@ app.post('/approval',
   require('permission')(['admin']),
   function(req, res){
     db.data.approve(req.user.user_id, req.body.macroid, function(err, user) {
-      if (err) { 
+      if (err) {
         //flash placeholder
         //req.flash('error', 'Could not approve macro run');
       }
@@ -83,7 +83,7 @@ app.get('/logs/:logDay',
       //load view
     }
     db.data.getLogs(req.params.logDay, function(err, results) {
-      if (err) { 
+      if (err) {
         //flash placeholder
         //req.flash('error', 'Could not get logs');
       }
@@ -92,15 +92,41 @@ app.get('/logs/:logDay',
       }
     });
   });
-    
+
 app.get('/logout',
   function(req, res){
     req.logout();
     res.redirect('/');
   });
 
+/*
+macroType is either update or delete. For now these do the same thing.
+We may want to add update and delete as feature in our LOG table so that we
+can easily more easly access Liberty Mutual's DB.
+TODO: macro id, parameters, and approver need to be properly passed/validated
+*/
+app.post('/submitMacro/:macroType', function(req, res) {
+    console.log("submitting macro");
+    var Body = req.body;
+    var uid = req.user.user_id;
+    var mid = Body.macroid;
+    var param = Body.parameters;
+    var approver = Body.approver_id;
+
+    db.data.updateDB(uid, mid, param, null, 'Submited', approver, Date.now(), null, null, function(err, result){
+      if(err){
+        //TODO: handle error
+      }
+      else{
+        console.log('macro submitted for approval');
+        //might not want or need to send results...
+        res.send(result);
+      }
+    })
+
+});
+
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
-

@@ -1,6 +1,7 @@
 //Send the run macro request
 
 export function submitUpdateMacroToServer(userRole,macro_title,parameters,approver,cb){
+<<<<<<< HEAD
   sendXHR('POST','/submitMacro/update'+ userRole,parameters ,
     //specify contents here
   (xhr)=>{cb,(JSON.parse(xhr.responseText))}
@@ -10,6 +11,74 @@ export function submitDeleteMacroToServer(userRole,macro_title,parameters,approv
   sendXHR('POST','/submitMacro/delete'+ userRole,parameters ,
     //specify contents here
   (xhr)=>{cb,(JSON.parse(xhr.responseText))}
+=======
+  var macro_id;
+  switch (macro_title){
+    case "Schedule Start time by Run Name and Audit ID" :
+      macro_id = 9;
+      break;
+    case 'Status Code by Run Name and Audit ID' :
+      macro_id = 10;
+      break;
+    case 'Valuation End Date by Run Name and Audit ID' :
+      macro_id = 11;
+      break;
+    case 'Valuation Start time by Run Name and Audit ID' :
+      macro_id = 12;
+      break;
+    case 'SLA Date and Time by Audit ID' :
+      macro_id = 7;
+      break;
+    case 'SLA Date and Time by Run Name' :
+      macro_id = 8;
+      break;
+    case 'Run Status Code by Run Name and Group Number' :
+      macro_id = 17;
+      break;
+    case 'Run Status Code by Run Name and Driver Step Detail ID' :
+      macro_id = 18;
+      break;
+    case 'Active Step Indicator by Driver Step ID' :
+      macro_id = 16;
+      break;
+    case 'Active Step Indicator by Run Name and Driver Step ID' :
+      macro_id = 15;
+      break;
+    case 'Active Step Indicator by Run Name' :
+      macro_id = 13;
+      break;
+    case 'Active Step Indicator by Run Name and Group Number' :
+      macro_id = 14;
+      break;
+
+  }
+  sendXHR('POST','/submitMacro/update'+ macro_id,parameters,approver, (xhr)=> {
+    cb,(JSON.parse(xhr.responseText))}
+  );
+}
+export function submitDeleteMacroToServer(userRole,macro_title,parameters,approver,cb){
+
+  var macro_id;
+  switch (macro_title){
+    case 'All Schedule entries by Run Name' :
+      macro_id = 1;
+      break;
+    case 'All Step entries by Run Name' :
+      macro_id = 3;
+      break;
+    case 'All Schedule entries by Run Name and Group Number' :
+      macro_id = 4;
+      break;
+    case 'All Schedule entries by Run Name and Driver Step ID' :
+      macro_id = 5;
+      break;
+    case 'All Step Detail entries by Run Name' :
+      macro_id = 2;
+      break;
+    }
+  sendXHR('POST','/submitMacro/delete'+ macro_id,parameters,approver,
+  (xhr) => {cb,(JSON.parse(xhr.responseText))}
+>>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
   );
 }
 export function getMacroStatusCode(userRole,macroname,statusCode,cb){
@@ -20,13 +89,20 @@ export function getMacroStatusCode(userRole,macroname,statusCode,cb){
   },  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
     );
 }
+<<<<<<< HEAD
 export function updateViewLogData(userRole,cb){
+=======
+export function updateHistory(userRole,cb){
+>>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
   sendXHR('POST','/history',userRole,
   (xhr)=> {cb(JSON.parse(xhr.responseText))
 });
 
 }
+<<<<<<< HEAD
 //add date parameters
+=======
+>>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
 export function getViewLogData(cb){
   sendXHR('GET','/history',undefined,
 (xhr)=>{cb(JSON.parse(xhr.responseText));

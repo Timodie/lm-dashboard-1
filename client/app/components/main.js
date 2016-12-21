@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import {showfield} from '../util.js';
+import {submitUpdateMacroToServer,submitDeleteMacroToServer} from '../server.js';
 
 
 export default class MainPanel extends React.Component {
@@ -210,11 +211,72 @@ export default class MainPanel extends React.Component {
 }
   submitUpdate(e){
   e.preventDefault();
+<<<<<<< HEAD
   alert("checking rolecheck");
   alert(this.role);
 }
   submitDelete(e){
     e.preventDefault();
+=======
+  var macro_title = this.state.macroname_field;
+  var parameters = [];
+  if (this.state.sladate){
+      parameters.push(this.state.sladate_field);
+    }
+  if (this.state.slatime){
+      parameters.push(this.state.slatime_field);
+    }
+  if (this.state.runname){
+      parameters.push(this.state.runname);
+    }
+  if (this.state.groupnum){
+      parameters.push(this.state.groupnum_field);
+    }
+  if (this.state.auditid){
+      parameters.push(this.state.auditid_field);
+    }
+  if (this.state.dsid){
+      parameters.push(this.state.dsid_field);
+    }
+  if (this.state.asid){
+      parameters.push(this.state.asid_field);
+    }
+  if (this.state.time){
+      parameters.push(this.state.time_field);
+    }
+  if (this.state.valstart){
+      parameters.push(this.state.valstart_field);
+    }
+  if (this.state.valend){
+      parameters.push(this.state.valend_field);
+    }
+  if (this.state.statuscode){
+      parameters.push(this.state.statuscode_field);
+    }
+  if (this.state.description){
+      parameters.push(this.state.description_field);
+    }
+  var approver = this.state.approver_field;
+  var cb = e;
+  submitUpdateMacroToServer(macro_title,parameters,approver,cb);
+}
+  submitDelete(e){
+    e.preventDefault();
+    var macro_title = this.state.macroname_field2;
+    var parameters = [];
+    if (this.state.runname2){
+        parameters.push(this.state.runname_field2);
+      }
+    if (this.state.groupnum2){
+        parameters.push(this.state.groupnum_field2);
+      }
+    if (this.state.dsid2){
+        parameters.push(this.state.dsid_field2);
+      }
+    var approver = this.state.approver_field2;
+    var cb = e;
+    submitDeleteMacroToServer(macro_title,parameters,approver,cb);
+>>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
 }
 
 
