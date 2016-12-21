@@ -121,7 +121,7 @@ exports.updateLOG = function(log_id, uid, mid, param, approver, result, status, 
       }
     }
   );
-  pool.query('INSERT INTO TIME_TABLE(log, status, timestamp)' +
+  pool.query('INSERT INTO TIME_TABLE(log, status, date)' +
              'VALUES (' + log_id  + ', \'' +  status  + '\', ' +  Date.now() + ');' ,
       function(error, results, fileds){
         if(error){
