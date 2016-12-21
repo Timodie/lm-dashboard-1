@@ -49,9 +49,9 @@ app.get('/login',
   });
 
 app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local'),
   function(req, res) {
-    res.redirect('/');
+    res.json({"success": "true"});
   });
 
 app.get('/approval',
