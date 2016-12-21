@@ -84,7 +84,7 @@ exports.run = function(mid, param) {
     }
     else{
         cb(null, results);
-        result = resulst[0];
+        result = result[0].solution;
       }
     }
   );
