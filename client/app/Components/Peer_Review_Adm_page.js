@@ -33,9 +33,9 @@ export default class Peer_Review_Page extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <Adm_Entry id="1" date={1453668480000} username="Tim" macroname="Macor2"/>
-                      <Adm_Entry id="2" date={1453668480000} username="Kelvin" macroname="Macor1"/>
-                      <Adm_Entry id="3" date={1453668480000} username="Eric" macroname="Macor3"/>
+                      <Adm_Entry id="1" date={1453668480000} username="user1" macroname="Update Valuation Start time by Run Name and Audit ID"/>
+                      <Adm_Entry id="2" date={1453668480000} username="user2" macroname="Update SLA Date and Time by Run Name"/>
+                      <Adm_Entry id="3" date={1453668480000} username="admin1" macroname="Delete All Step Detail entries by Run Name"/>
                     </tbody>
                   </table>
                 </div>

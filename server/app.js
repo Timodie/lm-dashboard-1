@@ -134,7 +134,7 @@ app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', 
    });
  });
 
- app.post('/deleteMacro/update/:macro_id/params/:parameters/approver/:approver', function(req, res) {
+ app.post('/submiMacro/delete/:macro_id/params/:parameters/approver/:approver', function(req, res) {
     console.log("submitting macro");
     var Body = req.body;
     // var uid = req.user.user_id;

@@ -65,7 +65,7 @@ export function submitDeleteMacroToServer(macro_title,parameters,approver,cb){
       macro_id = 2;
       break;
     }
-  sendXHR('POST','/submitMacro/delete'+ macro_id + '/params/' + parameters + '/approver/' + approver,undefined, (xhr)=> {
+  sendXHR('POST','/submitMacro/delete/'+ macro_id + '/params/' + parameters + '/approver/' + approver,undefined, (xhr)=> {
     cb,(JSON.parse(xhr.responseText))}
   );
 }
