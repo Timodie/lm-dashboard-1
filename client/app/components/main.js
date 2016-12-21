@@ -46,8 +46,6 @@ export default class MainPanel extends React.Component {
       statuscode : false,
       statuscode_field : ""
     };
-
-
   }
 
   handleMacro(newvalue) {
@@ -206,18 +204,10 @@ export default class MainPanel extends React.Component {
 
   refreshPage(e){
     e.preventDefault();
-
     window.location.reload();
 }
   submitUpdate(e){
   e.preventDefault();
-<<<<<<< HEAD
-  alert("checking rolecheck");
-  alert(this.role);
-}
-  submitDelete(e){
-    e.preventDefault();
-=======
   var macro_title = this.state.macroname_field;
   var parameters = [];
   if (this.state.sladate){
@@ -257,8 +247,9 @@ export default class MainPanel extends React.Component {
       parameters.push(this.state.description_field);
     }
   var approver = this.state.approver_field;
-  var cb = e;
-  submitUpdateMacroToServer(macro_title,parameters,approver,cb);
+  submitUpdateMacroToServer(macro_title,parameters,approver,() =>{
+    this.submissionAlert() ;
+    });
 }
   submitDelete(e){
     e.preventDefault();
@@ -274,14 +265,17 @@ export default class MainPanel extends React.Component {
         parameters.push(this.state.dsid_field2);
       }
     var approver = this.state.approver_field2;
-    var cb = e;
-    submitDeleteMacroToServer(macro_title,parameters,approver,cb);
->>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
-}
+
+    submitDeleteMacroToServer(macro_title,parameters,approver, () =>{
+      this.submissionAlert() ;
+      });
+  }
+    submissionAlert(){
+      alert("Server response :macro submitted")
+    }
 
 
   render() {
-
 
     var UpdateOptions = [
       { value: 'Schedule Start time by Run Name and Audit ID', label: 'Schedule Start time by Run Name and Audit ID'},
@@ -529,14 +523,12 @@ export default class MainPanel extends React.Component {
                   <button type="button" className="btn btn-default btn-md" onClick ={(e) =>this.submitDelete(e)}>
                     <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
                     Submit
-
-
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+                     </div>
+              </div>
+      </div>
       </div>
     );
   }

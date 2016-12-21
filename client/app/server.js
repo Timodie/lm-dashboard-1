@@ -89,20 +89,13 @@ export function getMacroStatusCode(userRole,macroname,statusCode,cb){
   },  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
     );
 }
-<<<<<<< HEAD
 export function updateViewLogData(userRole,cb){
-=======
-export function updateHistory(userRole,cb){
->>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
   sendXHR('POST','/history',userRole,
   (xhr)=> {cb(JSON.parse(xhr.responseText))
 });
 
 }
-<<<<<<< HEAD
-//add date parameters
-=======
->>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
+
 export function getViewLogData(cb){
   sendXHR('GET','/history',undefined,
 (xhr)=>{cb(JSON.parse(xhr.responseText));
