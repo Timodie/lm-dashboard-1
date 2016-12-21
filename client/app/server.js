@@ -1,17 +1,6 @@
 //Send the run macro request
 
 export function submitUpdateMacroToServer(userRole,macro_title,parameters,approver,cb){
-<<<<<<< HEAD
-  sendXHR('POST','/submitMacro/update'+ userRole,parameters ,
-    //specify contents here
-  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
-  );
-}
-export function submitDeleteMacroToServer(userRole,macro_title,parameters,approver,cb){
-  sendXHR('POST','/submitMacro/delete'+ userRole,parameters ,
-    //specify contents here
-  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
-=======
   var macro_id;
   switch (macro_title){
     case "Schedule Start time by Run Name and Audit ID" :
@@ -78,7 +67,6 @@ export function submitDeleteMacroToServer(userRole,macro_title,parameters,approv
     }
   sendXHR('POST','/submitMacro/delete'+ macro_id,parameters,approver,
   (xhr) => {cb,(JSON.parse(xhr.responseText))}
->>>>>>> 19f745d76d0c065f13febac9da5f9e18b17db541
   );
 }
 export function getMacroStatusCode(userRole,macroname,statusCode,cb){
@@ -89,13 +77,12 @@ export function getMacroStatusCode(userRole,macroname,statusCode,cb){
   },  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
     );
 }
-export function updateViewLogData(userRole,cb){
+export function updateHistory(userRole,cb){
   sendXHR('POST','/history',userRole,
   (xhr)=> {cb(JSON.parse(xhr.responseText))
 });
 
 }
-
 export function getViewLogData(cb){
   sendXHR('GET','/history',undefined,
 (xhr)=>{cb(JSON.parse(xhr.responseText));
