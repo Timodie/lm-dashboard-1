@@ -293,8 +293,7 @@ export default class MainPanel extends React.Component {
       { value: 'All Step Detail entries by Run Name', label: 'All Step Detail entries by Run Name'}
     ];
     var Approver = [
-      { value: 'ericgendreau', label: 'ericgendreau'},
-      { value: 'timmodie', label: 'timmodie'}
+      { value: 'admin1', label: 'admin1'}
     ]
 
     return (
