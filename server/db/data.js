@@ -36,8 +36,8 @@ exports.getLogs = function(date, cb) {
     );
 }
 
-exports.run = function(uid, mid, cb) {
-  pool.query('SELECT * FROM test;',
+exports.run = function(mid, param) {
+  pool.query('EXECUTE PM_EDW_META_D.' + mid + '(' + param + ');',
     function(error, results, fields){
     if(error){
       cb(error, null);
@@ -69,6 +69,55 @@ exports.updateDB = function(uid, mid, param, result, status, approver_id, data_s
       }
       else{
         cb(null, results);
+      }
+    }
+  );
+}
+
+// Functions that writes log into our DB.
+exports.updateLOG = function(log_id, uid, mid, param, approver, result, status) {
+  pool.query('INSERT INTO LOG(log_id, uid, mid, param, approver, result) ' +
+             'VALUES (' + log_id + mid + uid + param + approver + result + '); ',
+    function(error, results, fields){
+      if(error){
+        cb(error, null);
+      }
+      if (results == null){
+        cb(null, null);
+      }
+      else{
+        cb(null, results);
+      }
+    }
+  );
+  pool.query('INSERT INTO TIME(log_id, mid, status, timestamp)' +
+             'VALUES (' + log_id + mid + status + Date.now() + ');' ,
+      function(error, results, fileds){
+        if(error){
+          cb(error,null);
+        }
+        if (results == null){
+          cb(null, null);
+        }
+        else {
+          cb(null, results);
+        }
+      }
+  );
+}
+
+// Getting status of a macro.
+exports.getStatus = function(){
+  pool.query("SELECT * FROM Status;",
+  function(error, results, fields){
+    if(error){
+      cb(error, null);
+    }
+    if (results == null){
+      cb(null, null);
+    }
+    else{
+      cb(null, results);
       }
     }
   );
