@@ -36,6 +36,22 @@ exports.getLogs = function(date, cb) {
     );
 }
 
+exports.getApproves = function(cb) {
+	pool.query('SELECT LOG.*, TIME_TABLE.timestamp FROM LOG JOIN TIME_TABLE ON LOG.log_id = TIME_TABLE.log WHERE TIME_TABLE.status = \'Submitted\';',
+        function(error, results, fields) {
+            if (error){
+                cb(error, null)
+            }
+            if (results == null){
+                cb(null, null);
+            }
+            else{
+                cb(null, results);
+            }
+        }
+    );
+}
+
 
 // Functions that actually runs a macro.
 exports.run = function(mid, param) {
