@@ -42,22 +42,17 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-
-app.get('/login',
-  function(req, res){
-    res.render('login');
-  });
-
 app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local'),
   function(req, res) {
-    res.redirect('/');
+    res.json({"success": "true"});
   });
 
 app.get('/approval',
   require('permission')(['admin']),
   function(req, res){
-    res.render('appqueue', { user: req.user });
+    db.data.getApproves(function(err, data) {
+      res.json(JSON.stringify(data));
   });
 
 app.post('/approval',
@@ -105,13 +100,38 @@ We may want to add update and delete as feature in our LOG table so that we
 can easily more easly access Liberty Mutual's DB.
 TODO: macro id, parameters, and approver need to be properly passed/validated
 */
-app.post('/submitMacro/:macroType', function(req, res) {
+<<<<<<< HEAD
+app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', function(req, res) {
+   console.log("submitting macro");
+   var Body = req.body;
+   // var uid = req.user.user_id;
+   var uid =1;
+   var log_id =1;
+   console.log(uid);
+   var mid = Body.macro_id;
+   var param = Body.parameters;
+   var approver = Body.approver;
+
+   db.data.updateLOG(log_id, uid, mid, param, null, 'Submited', approver, null, function(err, result){
+     if(err){
+       //TODO: handle error
+     }
+     else{
+       console.log('macro submitted for approval');
+       //might not want or need to send results...
+       res.send(result);
+     }
+   })
+=======
+app.post('/submitMacro/update', function(req, res) {
     console.log("submitting macro");
     var Body = req.body;
-    var uid = req.user.user_id;
-    var mid = Body.macroid;
+    // var uid = req.user.user_id;
+    var uid =1;
+    console.log(uid);
+    var mid = Body.macro_id;
     var param = Body.parameters;
-    var approver = Body.approver_id;
+    var approver = Body.approver;
 
     db.data.updateDB(uid, mid, param, null, 'Submited', approver, Date.now(), null, null, function(err, result){
       if(err){
@@ -123,6 +143,7 @@ app.post('/submitMacro/:macroType', function(req, res) {
         res.send(result);
       }
     })
+>>>>>>> c99190be819de0bedddff0e9f5a4a851232ba719
 
 });
 
