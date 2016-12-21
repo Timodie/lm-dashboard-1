@@ -36,8 +36,24 @@ exports.getLogs = function(date, cb) {
     );
 }
 
+
+// Functions that actually runs a macro.
 exports.run = function(mid, param) {
-  pool.query('EXECUTE PM_EDW_META_D.' + mid + '(' + param + ');',
+    pool.query('SELECT MACRO.macro_name FROM MACRO WHERE MACRO.macro_id =' + mid,
+    function(error, results, fields){
+      if(error){
+        cb(error, null);
+      }
+      if (results == null){
+        cb(null, null);
+      }
+      else{
+        cb(null, results);
+      }
+    }
+  );
+  var name = results[0];
+  pool.query('EXECUTE PM_EDW_META_D.' + name + '(' + param + ');',
     function(error, results, fields){
     if(error){
       cb(error, null);
