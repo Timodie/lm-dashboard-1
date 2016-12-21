@@ -112,6 +112,7 @@ app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', 
    var approver = 1;
    db.data.updateLOG(log_id, uid, mid, param, approver, null, 'Submitted', function(err, result){
      if(err){
+       console.log("now submitting macro");
        //TODO: handle error
      }
      else{
@@ -121,6 +122,27 @@ app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', 
      }
    });
  });
+
+ app.post('/deleteMacro/update/:macro_id/params/:parameters/approver/:approver', function(req, res) {
+    console.log("submitting macro");
+    var Body = req.body;
+    // var uid = req.user.user_id;
+    var uid =1;
+    var log_id =1;
+    var mid = req.params.macro_id;
+    var param = req.params.parameters;
+    var approver = 1;
+    db.data.updateLOG(log_id, uid, mid, param, approver, null, 'Submitted', function(err, result){
+      if(err){
+        //TODO: handle error
+      }
+      else{
+        console.log('macro submitted for approval');
+        //might not want or need to send results...
+        res.send(result);
+      }
+    });
+  });
 
 // app.post('/submitMacro/update', function(req, res) {
 //     console.log("submitting macro");
