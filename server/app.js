@@ -105,13 +105,15 @@ We may want to add update and delete as feature in our LOG table so that we
 can easily more easly access Liberty Mutual's DB.
 TODO: macro id, parameters, and approver need to be properly passed/validated
 */
-app.post('/submitMacro/:macroType', function(req, res) {
+app.post('/submitMacro/update', function(req, res) {
     console.log("submitting macro");
     var Body = req.body;
-    var uid = req.user.user_id;
-    var mid = Body.macroid;
+    // var uid = req.user.user_id;
+    var uid =1;
+    console.log(uid);
+    var mid = Body.macro_id;
     var param = Body.parameters;
-    var approver = Body.approver_id;
+    var approver = Body.approver;
 
     db.data.updateDB(uid, mid, param, null, 'Submited', approver, Date.now(), null, null, function(err, result){
       if(err){
