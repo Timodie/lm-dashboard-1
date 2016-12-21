@@ -1,6 +1,7 @@
 import React from 'react';
 import Calendar from 'rc-calendar';
 import View_log_Entry from './MacroS_PeerR/View_log_Entry.js'
+import {getViewLogData,updateViewLogData} from '../server.js';
 
 export default class ViewLog extends React.Component{
 
@@ -24,6 +25,7 @@ export default class ViewLog extends React.Component{
 
   onSubmit(e){
     e.preventDefault();
+
     // console.log(this.state.Year);
     // console.log(this.state.Month);
     // console.log(this.state.Date);

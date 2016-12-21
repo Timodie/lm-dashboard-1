@@ -247,8 +247,9 @@ export default class MainPanel extends React.Component {
       parameters.push(this.state.description_field);
     }
   var approver = this.state.approver_field;
-  var cb = e;
-  submitUpdateMacroToServer(macro_title,parameters,approver,cb);
+  submitUpdateMacroToServer(macro_title,parameters,approver,() =>{
+    this.submissionAlert() ;
+    });
 }
   submitDelete(e){
     e.preventDefault();
@@ -264,9 +265,14 @@ export default class MainPanel extends React.Component {
         parameters.push(this.state.dsid_field2);
       }
     var approver = this.state.approver_field2;
-    var cb = e;
-    submitDeleteMacroToServer(macro_title,parameters,approver,cb);
-}
+
+    submitDeleteMacroToServer(macro_title,parameters,approver, () =>{
+      this.submissionAlert() ;
+      });
+  }
+    submissionAlert(){
+      alert("Server response :macro submitted")
+    }
 
 
   render() {
@@ -293,8 +299,7 @@ export default class MainPanel extends React.Component {
       { value: 'All Step Detail entries by Run Name', label: 'All Step Detail entries by Run Name'}
     ];
     var Approver = [
-      { value: 'ericgendreau', label: 'ericgendreau'},
-      { value: 'timmodie', label: 'timmodie'}
+      { value: 'admin1', label: 'admin1'}
     ]
 
     return (
