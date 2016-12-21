@@ -1,12 +1,12 @@
 //Send the run macro request
 
-export function submitUpdateMacroToServer(userRole,parameters,type,cb){
+export function submitUpdateMacroToServer(userRole,macro_title,parameters,approver,cb){
   sendXHR('POST','/submitMacro/update'+ userRole,parameters ,
     //specify contents here
   (xhr)=>{cb,(JSON.parse(xhr.responseText))}
   );
 }
-export function submitDeleteMacroToServer(userRole,parameters,type,cb){
+export function submitDeleteMacroToServer(userRole,macro_title,parameters,approver,cb){
   sendXHR('POST','/submitMacro/delete'+ userRole,parameters ,
     //specify contents here
   (xhr)=>{cb,(JSON.parse(xhr.responseText))}
@@ -20,12 +20,13 @@ export function getMacroStatusCode(userRole,macroname,statusCode,cb){
   },  (xhr)=>{cb,(JSON.parse(xhr.responseText))}
     );
 }
-export function updateHistory(userRole,cb){
+export function updateViewLogData(userRole,cb){
   sendXHR('POST','/history',userRole,
   (xhr)=> {cb(JSON.parse(xhr.responseText))
 });
 
 }
+//add date parameters
 export function getViewLogData(cb){
   sendXHR('GET','/history',undefined,
 (xhr)=>{cb(JSON.parse(xhr.responseText));

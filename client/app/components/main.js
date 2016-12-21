@@ -1,12 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
-import {submitMacroToServer} from '../server';
-=======
 import Select from 'react-select';
 import {showfield} from '../util.js';
 
 
->>>>>>> 343bcecf59b24a4c933ec7b1232bf81fbf261c56
 export default class MainPanel extends React.Component {
 
   constructor(props) {
@@ -49,6 +45,8 @@ export default class MainPanel extends React.Component {
       statuscode : false,
       statuscode_field : ""
     };
+
+
   }
 
   handleMacro(newvalue) {
@@ -207,15 +205,21 @@ export default class MainPanel extends React.Component {
 
   refreshPage(e){
     e.preventDefault();
+
     window.location.reload();
 }
-submitMacro(e){
+  submitUpdate(e){
   e.preventDefault();
-
+  alert("checking rolecheck");
+  alert(this.role);
+}
+  submitDelete(e){
+    e.preventDefault();
 }
 
 
   render() {
+
 
     var UpdateOptions = [
       { value: 'Schedule Start time by Run Name and Audit ID', label: 'Schedule Start time by Run Name and Audit ID'},
@@ -281,7 +285,7 @@ submitMacro(e){
                     Run Name
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field} onChange={(e) => this.handleRunName(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field} onChange={(e) => this.handleRunName(e)} aria-describedby="sizing-addon2 " />
                   </div>
 
                 </div>
@@ -291,7 +295,7 @@ submitMacro(e){
                     Schedule Start Time
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Start Time" value={this.state.date_field} onChange={(e) => this.handleDate(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Start Time" value={this.state.date_field} onChange={(e) => this.handleDate(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -300,7 +304,7 @@ submitMacro(e){
                     Valuation Start
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Time" value={this.state.valstart_field} onChange={(e) => this.handleValStart(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Time" value={this.state.valstart_field} onChange={(e) => this.handleValStart(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -309,7 +313,7 @@ submitMacro(e){
                     Valuation End Date
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="End Date" value={this.state.valend_field} onChange={(e) => this.handleValEnd(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="End Date" value={this.state.valend_field} onChange={(e) => this.handleValEnd(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -319,7 +323,7 @@ submitMacro(e){
                     Audit ID
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Audit ID" value={this.state.auditid_field} onChange={(e) => this.handleAuditID(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Audit ID" value={this.state.auditid_field} onChange={(e) => this.handleAuditID(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -328,7 +332,7 @@ submitMacro(e){
                     Group Number
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field} onChange={(e) => this.handleGroupNum(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field} onChange={(e) => this.handleGroupNum(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -337,7 +341,7 @@ submitMacro(e){
                     Status Code
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Status Code" value={this.state.statuscode_field} onChange={(e) => this.handleStatusCode(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Status Code" value={this.state.statuscode_field} onChange={(e) => this.handleStatusCode(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -346,7 +350,7 @@ submitMacro(e){
                     SLA Date
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="SLA Date" value={this.state.sladate_field} onChange={(e) => this.handleSLADate(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="SLA Date" value={this.state.sladate_field} onChange={(e) => this.handleSLADate(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -355,7 +359,7 @@ submitMacro(e){
                     SLA Time
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="SLA Time" value={this.state.slatime_field} onChange={(e) => this.handleSLATime(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="SLA Time" value={this.state.slatime_field} onChange={(e) => this.handleSLATime(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -364,7 +368,7 @@ submitMacro(e){
                     Driver Step ID
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field} onChange={(e) => this.handleDSID(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field} onChange={(e) => this.handleDSID(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -373,7 +377,7 @@ submitMacro(e){
                     Active Step Indicator
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Active Step Indicator" value={this.state.asid_field} onChange={(e) => this.handleASID(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Active Step Indicator" value={this.state.asid_field} onChange={(e) => this.handleASID(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -382,37 +386,24 @@ submitMacro(e){
                     Description
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Description" value={this.state.description_field} onChange={(e) => this.handleDescription(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Description" value={this.state.description_field} onChange={(e) => this.handleDescription(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
               </div>
-                <div className = "row reset">
-<<<<<<< HEAD
-                  <button type="button" className="btn btn-default btn-lg">
-                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true" onClick ={(e) => this.submitMacro(e)}></span>
-                    Submit
-                  </button>
-                </div>
-                <div className = "row reset">
-                  <button type="button" className="btn btn-default btn-lg" onClick ={(e) => this.refreshPage(e)}>
+              <div className = "row reset">
+                <div className ="col-md-3">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.refreshPage(e)}>
                     <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
                     Reset
                   </button>
-=======
-                  <div className ="col-md-3">
-                    <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.refreshPage(e)}>
-                      <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
-                      Reset
-                    </button>
-                  </div>
-                  <div className ="col-md-3 col-md-offset-5">
-                    <button type="button" className="btn btn-default btn-md">
-                      <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
-                      Submit
-                    </button>
-                  </div>
->>>>>>> 343bcecf59b24a4c933ec7b1232bf81fbf261c56
                 </div>
+                <div className ="col-md-3 col-md-offset-5">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.submitUpdate(e)}>
+                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
+                    Submit
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="tab-pane" id="tab_d">
@@ -443,7 +434,7 @@ submitMacro(e){
                     Run Name
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field2} onChange={(e) => this.handleRunName2(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field2} onChange={(e) => this.handleRunName2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -452,7 +443,7 @@ submitMacro(e){
                     Group Number
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field2} onChange={(e) => this.handleGroupNum2(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field2} onChange={(e) => this.handleGroupNum2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -461,7 +452,7 @@ submitMacro(e){
                     Driver Step ID
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field2} onChange={(e) => this.handleDSID2(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field2} onChange={(e) => this.handleDSID2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
               </div>
@@ -473,15 +464,17 @@ submitMacro(e){
                   </button>
                 </div>
                 <div className ="col-md-3 col-md-offset-5">
-                  <button type="button" className="btn btn-default btn-md">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) =>this.submitDelete(e)}>
                     <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
                     Submit
+
+
                   </button>
                 </div>
               </div>
-                     </div>
-              </div>
-      </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
