@@ -42,22 +42,17 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-
-app.get('/login',
-  function(req, res){
-    res.render('login');
-  });
-
 app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local'),
   function(req, res) {
-    res.redirect('/');
+    res.json({"success": "true"});
   });
 
 app.get('/approval',
   require('permission')(['admin']),
   function(req, res){
-    res.render('appqueue', { user: req.user });
+    db.data.getApproves(function(err, data) {
+      res.json(JSON.stringify(data));
   });
 
 app.post('/approval',
