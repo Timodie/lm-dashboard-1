@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import {showfield} from '../util.js';
+import {submitUpdateMacroToServer,submitDeleteMacroToServer} from '../server.js';
 
 
 export default class MainPanel extends React.Component {
@@ -205,6 +206,67 @@ export default class MainPanel extends React.Component {
     e.preventDefault();
     window.location.reload();
 }
+  submitUpdate(e){
+  e.preventDefault();
+  var macro_title = this.state.macroname_field;
+  var parameters = [];
+  if (this.state.sladate){
+      parameters.push(this.state.sladate_field);
+    }
+  if (this.state.slatime){
+      parameters.push(this.state.slatime_field);
+    }
+  if (this.state.runname){
+      parameters.push(this.state.runname);
+    }
+  if (this.state.groupnum){
+      parameters.push(this.state.groupnum_field);
+    }
+  if (this.state.auditid){
+      parameters.push(this.state.auditid_field);
+    }
+  if (this.state.dsid){
+      parameters.push(this.state.dsid_field);
+    }
+  if (this.state.asid){
+      parameters.push(this.state.asid_field);
+    }
+  if (this.state.time){
+      parameters.push(this.state.time_field);
+    }
+  if (this.state.valstart){
+      parameters.push(this.state.valstart_field);
+    }
+  if (this.state.valend){
+      parameters.push(this.state.valend_field);
+    }
+  if (this.state.statuscode){
+      parameters.push(this.state.statuscode_field);
+    }
+  if (this.state.description){
+      parameters.push(this.state.description_field);
+    }
+  var approver = this.state.approver_field;
+  var cb = e;
+  submitUpdateMacroToServer(macro_title,parameters,approver,cb);
+}
+  submitDelete(e){
+    e.preventDefault();
+    var macro_title = this.state.macroname_field2;
+    var parameters = [];
+    if (this.state.runname2){
+        parameters.push(this.state.runname_field2);
+      }
+    if (this.state.groupnum2){
+        parameters.push(this.state.groupnum_field2);
+      }
+    if (this.state.dsid2){
+        parameters.push(this.state.dsid_field2);
+      }
+    var approver = this.state.approver_field2;
+    var cb = e;
+    submitDeleteMacroToServer(macro_title,parameters,approver,cb);
+}
 
 
   render() {
@@ -273,7 +335,7 @@ export default class MainPanel extends React.Component {
                     Run Name
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field} onChange={(e) => this.handleRunName(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field} onChange={(e) => this.handleRunName(e)} aria-describedby="sizing-addon2 " />
                   </div>
 
                 </div>
@@ -283,7 +345,7 @@ export default class MainPanel extends React.Component {
                     Schedule Start Time
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Start Time" value={this.state.date_field} onChange={(e) => this.handleDate(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Start Time" value={this.state.date_field} onChange={(e) => this.handleDate(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -292,7 +354,7 @@ export default class MainPanel extends React.Component {
                     Valuation Start
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Time" value={this.state.valstart_field} onChange={(e) => this.handleValStart(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Time" value={this.state.valstart_field} onChange={(e) => this.handleValStart(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -301,7 +363,7 @@ export default class MainPanel extends React.Component {
                     Valuation End Date
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="End Date" value={this.state.valend_field} onChange={(e) => this.handleValEnd(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="End Date" value={this.state.valend_field} onChange={(e) => this.handleValEnd(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -311,7 +373,7 @@ export default class MainPanel extends React.Component {
                     Audit ID
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Audit ID" value={this.state.auditid_field} onChange={(e) => this.handleAuditID(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Audit ID" value={this.state.auditid_field} onChange={(e) => this.handleAuditID(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -320,7 +382,7 @@ export default class MainPanel extends React.Component {
                     Group Number
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field} onChange={(e) => this.handleGroupNum(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field} onChange={(e) => this.handleGroupNum(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -329,7 +391,7 @@ export default class MainPanel extends React.Component {
                     Status Code
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Status Code" value={this.state.statuscode_field} onChange={(e) => this.handleStatusCode(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Status Code" value={this.state.statuscode_field} onChange={(e) => this.handleStatusCode(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -338,7 +400,7 @@ export default class MainPanel extends React.Component {
                     SLA Date
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="SLA Date" value={this.state.sladate_field} onChange={(e) => this.handleSLADate(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="SLA Date" value={this.state.sladate_field} onChange={(e) => this.handleSLADate(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -347,7 +409,7 @@ export default class MainPanel extends React.Component {
                     SLA Time
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="SLA Time" value={this.state.slatime_field} onChange={(e) => this.handleSLATime(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="SLA Time" value={this.state.slatime_field} onChange={(e) => this.handleSLATime(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -356,7 +418,7 @@ export default class MainPanel extends React.Component {
                     Driver Step ID
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field} onChange={(e) => this.handleDSID(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field} onChange={(e) => this.handleDSID(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -365,7 +427,7 @@ export default class MainPanel extends React.Component {
                     Active Step Indicator
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Active Step Indicator" value={this.state.asid_field} onChange={(e) => this.handleASID(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Active Step Indicator" value={this.state.asid_field} onChange={(e) => this.handleASID(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -374,24 +436,24 @@ export default class MainPanel extends React.Component {
                     Description
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Description" value={this.state.description_field} onChange={(e) => this.handleDescription(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Description" value={this.state.description_field} onChange={(e) => this.handleDescription(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
               </div>
-                <div className = "row reset">
-                  <div className ="col-md-3">
-                    <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.refreshPage(e)}>
-                      <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
-                      Reset
-                    </button>
-                  </div>
-                  <div className ="col-md-3 col-md-offset-5">
-                    <button type="button" className="btn btn-default btn-md">
-                      <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
-                      Submit
-                    </button>
-                  </div>
+              <div className = "row reset">
+                <div className ="col-md-3">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.refreshPage(e)}>
+                    <span className="glyphicon glyphicon-repeat thisglyph" aria-hidden="true"></span>
+                    Reset
+                  </button>
                 </div>
+                <div className ="col-md-3 col-md-offset-5">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) => this.submitUpdate(e)}>
+                    <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
+                    Submit
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="tab-pane" id="tab_d">
@@ -422,7 +484,7 @@ export default class MainPanel extends React.Component {
                     Run Name
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field2} onChange={(e) => this.handleRunName2(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Run Name" value={this.state.runname_field2} onChange={(e) => this.handleRunName2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -431,7 +493,7 @@ export default class MainPanel extends React.Component {
                     Group Number
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field2} onChange={(e) => this.handleGroupNum2(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Group Number" value={this.state.groupnum_field2} onChange={(e) => this.handleGroupNum2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
 
@@ -440,7 +502,7 @@ export default class MainPanel extends React.Component {
                     Driver Step ID
                   </div>
                   <div className ="col-md-8">
-                      <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field2} onChange={(e) => this.handleDSID2(e)} aria-describedby="sizing-addon2 " />
+                    <input type="text" className="form-control" placeholder="Driver Step ID" value={this.state.dsid_field2} onChange={(e) => this.handleDSID2(e)} aria-describedby="sizing-addon2 " />
                   </div>
                 </div>
               </div>
@@ -452,7 +514,7 @@ export default class MainPanel extends React.Component {
                   </button>
                 </div>
                 <div className ="col-md-3 col-md-offset-5">
-                  <button type="button" className="btn btn-default btn-md">
+                  <button type="button" className="btn btn-default btn-md" onClick ={(e) =>this.submitDelete(e)}>
                     <span className="glyphicon glyphicon-ok thisglyph" aria-hidden="true"></span>
                     Submit
                   </button>
