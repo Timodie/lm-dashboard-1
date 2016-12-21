@@ -2,8 +2,8 @@ var mysql      = require('mysql');
 var pool = mysql.createPool({
   connectionLimit : 10,
   host     : '138.197.32.168',
-  user     : 'xxx',
-  password : 'xxx',
+  user     : 'Carter',
+  password : '!carterABCD1234',
   database : 'dummy'
 });
 var result = ""
@@ -69,7 +69,7 @@ exports.run = function(mid, param) {
   );
 }
 
-/*  DO NOT DELETE --- Used for submitMacro. If modified, will need to modify 
+/*  DO NOT DELETE --- Used for submitMacro. If modified, will need to modify
     submitMacro to reflect changes.
     TODO: Make changes to reflect changes in db
 */

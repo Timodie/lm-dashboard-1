@@ -1,7 +1,8 @@
 //Send the run macro request
 
-export function submitUpdateMacroToServer(userRole,macro_title,parameters,approver,cb){
+export function submitUpdateMacroToServer(macro_title,parameters,approver,cb){
   var macro_id;
+  console.log(macro_title);
   switch (macro_title){
     case "Schedule Start time by Run Name and Audit ID" :
       macro_id = 9;
@@ -41,11 +42,12 @@ export function submitUpdateMacroToServer(userRole,macro_title,parameters,approv
       break;
 
   }
-  sendXHR('POST','/submitMacro/update'+ macro_id,parameters,approver, (xhr)=> {
+  console.log(macro_id);
+  sendXHR('POST','/submitMacro/update/'+ macro_id + '/params/' + parameters + '/approver/' + approver,undefined, (xhr)=> {
     cb,(JSON.parse(xhr.responseText))}
   );
 }
-export function submitDeleteMacroToServer(userRole,macro_title,parameters,approver,cb){
+export function submitDeleteMacroToServer(macro_title,parameters,approver,cb){
 
   var macro_id;
   switch (macro_title){
