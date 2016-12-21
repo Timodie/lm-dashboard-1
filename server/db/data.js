@@ -8,20 +8,39 @@ var pool = mysql.createPool({
 });
 var result = ""
 exports.approve = function(uid, mid, cb) {
-    pool.query('UPDATE test SET APPROVAL = Approved, APPROVED_BY = ' + id + ', APPROVAL_TIME = ' + Date.now() + ' WHERE ID = ' + mid + ';',
+    pool.query('UPDATE LOG SET approver = ' + uid + ' WHERE log_id = ' + mid + ';',
         function(error, results, fields) {
             if (error){
                 cb(error, null)
             }
+    );
+    pool.query('INSERT INTO TIME_TABLE(log, status, timestamp)' +
+             'VALUES (' + mid + status + Date.now() + ');',
+        function(error, results, fields) {
+            if (error){
+                cb(error, null)
+            }
+    );     
+}
+
+exports.getLogs = function(date, cb) {
+	pool.query('SELECT * from log WHERE date_submitted =' + date + ';',
+        function(error, results, fields) {
+            if (error){
+                cb(error, null)
+            }
+            if (results == null){
+                cb(null, null);
+            }
             else{
-                cb(null, results[0]);
+                cb(null, results);
             }
         }
     );
 }
 
-exports.getLogs = function(date, cb) {
-	pool.query('SELECT * from log WHERE date_submitted =' + date + ';',
+exports.getApproves = function(cb) {
+	pool.query('SELECT LOG.*, TIME_TABLE.timestamp FROM LOG JOIN TIME_TABLE ON LOG.log_id = TIME_TABLE.log WHERE TIME_TABLE.status = \'Submitted\';',
         function(error, results, fields) {
             if (error){
                 cb(error, null)
