@@ -6,15 +6,15 @@ var permission = require('permission');
 var bodyParser = require('body-parser');
 var db = require('./db');
 
-passport.use(new Strategy(
-  function(username, password, cb) {
-    db.users.findByUsername(username, function(err, user) {
-      if (err) { return cb(err); }
-      if (!user) { return cb(null, false); }
-      if (user.password != password) { return cb(null, false); }
-      return cb(null, user);
-    });
-  }));
+// passport.use(new Strategy(
+//   function(username, password, cb) {
+//     db.users.findByUsername(username, function(err, user) {
+//       if (err) { return cb(err); }
+//       if (!user) { return cb(null, false); }
+//       if (user.password != password) { return cb(null, false); }
+//       return cb(null, user);
+//     });
+//   }));
 
 passport.serializeUser(function(user, cb) {
   cb(null, user.user_id);
@@ -40,7 +40,7 @@ app.use(express.static('../client/build'));
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
-})
+});
 
 app.post('/login',
   passport.authenticate('local'),
@@ -48,12 +48,12 @@ app.post('/login',
     res.json({"success": "true"});
   });
 
-app.get('/approval',
-  require('permission')(['admin']),
-  function(req, res){
-    db.data.getApproves(function(err, data) {
-      res.json(JSON.stringify(data));
-  });
+// app.get('/approval',
+//   require('permission')(['admin']),
+//   function(req, res){
+//     db.data.getApproves(function(err, data) {
+//       res.json(JSON.stringify(data));
+//   });
 
 app.post('/approval',
   require('permission')(['admin']),
@@ -100,19 +100,17 @@ We may want to add update and delete as feature in our LOG table so that we
 can easily more easly access Liberty Mutual's DB.
 TODO: macro id, parameters, and approver need to be properly passed/validated
 */
-<<<<<<< HEAD
+
 app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', function(req, res) {
    console.log("submitting macro");
    var Body = req.body;
    // var uid = req.user.user_id;
    var uid =1;
    var log_id =1;
-   console.log(uid);
-   var mid = Body.macro_id;
-   var param = Body.parameters;
-   var approver = Body.approver;
-
-   db.data.updateLOG(log_id, uid, mid, param, null, 'Submited', approver, null, function(err, result){
+   var mid = req.params.macro_id;
+   var param = req.params.parameters;
+   var approver = 1;
+   db.data.updateLOG(log_id, uid, mid, param, approver, null, 'Submitted', function(err, result){
      if(err){
        //TODO: handle error
      }
@@ -121,33 +119,32 @@ app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', 
        //might not want or need to send results...
        res.send(result);
      }
-   })
-=======
-app.post('/submitMacro/update', function(req, res) {
-    console.log("submitting macro");
-    var Body = req.body;
-    // var uid = req.user.user_id;
-    var uid =1;
-    console.log(uid);
-    var mid = Body.macro_id;
-    var param = Body.parameters;
-    var approver = Body.approver;
+   });
+ });
 
-    db.data.updateDB(uid, mid, param, null, 'Submited', approver, Date.now(), null, null, function(err, result){
-      if(err){
-        //TODO: handle error
-      }
-      else{
-        console.log('macro submitted for approval');
-        //might not want or need to send results...
-        res.send(result);
-      }
-    })
->>>>>>> c99190be819de0bedddff0e9f5a4a851232ba719
-
-});
+// app.post('/submitMacro/update', function(req, res) {
+//     console.log("submitting macro");
+//     var Body = req.body;
+//     // var uid = req.user.user_id;
+//     var uid =1;
+//     console.log(uid);
+//     var mid = Body.macro_id;
+//     var param = Body.parameters;
+//     var approver = Body.approver;
+//
+//     db.data.updateDB(uid, mid, param, null, 'Submited', approver, Date.now(), null, null, function(err, result){
+//       if(err){
+//         //TODO: handle error
+//       }
+//       else{
+//         console.log('macro submitted for approval');
+//         //might not want or need to send results...
+//         res.send(result);
+//       }
+//     })
+// });
 
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
-})
+});
