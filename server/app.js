@@ -42,10 +42,20 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 });
 
-app.post('/login',
-  passport.authenticate('local'),
+app.post('/login/username/:username/password/:password',
+
+  //passport.authenticate('local'),
+  //function(req, res) {
+    //res.json({"success": "true"});
   function(req, res) {
-    res.json({"success": "true"});
+      console.log("logging in"+req.body.username);
+    db.users.findByUsername(req.params.username, function(err, user) {
+      if (err) { res.status(403).send("Error") }
+      else if (!user) { res.status(403).send("No user found"); }
+      else if (user.password != req.params.password) { res.status(403).send("Invalid login"); }
+      else{ res.status(200).send(user);}
+
+    });
   });
 
 // app.get('/approval',
@@ -113,11 +123,12 @@ app.post('/submitMacro/update/:macro_id/params/:parameters/approver/:approver', 
    db.data.updateLOG(log_id, uid, mid, param, approver, null, 'Submitted', function(err, result){
      if(err){
        //TODO: handle error
+      res.status(403);
      }
      else{
        console.log('macro submitted for approval');
        //might not want or need to send results...
-       res.send(result);
+       res.status(200).send(result);
      }
    });
  });

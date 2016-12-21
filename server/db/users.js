@@ -2,18 +2,20 @@ var mysql      = require('mysql');
 var pool = mysql.createPool({
   connectionLimit : 10,
   host     : '138.197.32.168',
-  user     : 'xxx',
-  password : 'xxx',
+  user     : 'Carter',
+  password : '!carterABCD1234',
   database : 'dummy'
 });
 //format is req.user.(user_id, role, username, password)
 exports.findByUsername = function(username, cb) {
     pool.query('SELECT * from user where username = \'' + username + '\';',
         function(error, results, fields) {
+            console.log("logging results");
+            console.log(results);
             if (error){
                 cb(error, null)
             }
-            if (results == null){
+          else if (results == null){
                 cb(null, null);
             }
             else{
@@ -29,7 +31,7 @@ exports.findById = function(id, cb) {
             if (error){
                 cb(error, null)
             }
-            if (results == null){
+          else if (results == null){
                 cb(null, null);
             }
             else{

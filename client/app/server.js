@@ -90,7 +90,13 @@ export function getViewLogData(cb){
 (xhr)=>{cb(JSON.parse(xhr.responseText));
 });
 }
-
+export function signinUser(username,password,cb){
+  console.log(username);
+  console.log(password);
+  sendXHR('POST','/login/username/'+ username + '/password/'+password, undefined, (xhr)=> {
+    cb(JSON.parse(xhr.responseText));}
+  );
+}
 /**
  * Properly configure+send an XMLHttpRequest with error handling, authorization token,
  * and other needed properties.
