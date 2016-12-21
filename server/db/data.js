@@ -13,6 +13,7 @@ exports.approve = function(uid, mid, cb) {
             if (error){
                 cb(error, null)
             }
+          }
     );
     pool.query('INSERT INTO TIME_TABLE(log, status, timestamp)' +
              'VALUES (' + mid + status + Date.now() + ');',
@@ -20,7 +21,8 @@ exports.approve = function(uid, mid, cb) {
             if (error){
                 cb(error, null)
             }
-    );     
+          }
+    );
 }
 
 exports.getLogs = function(date, cb) {
@@ -110,29 +112,20 @@ exports.updateDB = function(uid, mid, param, result, status, approver_id, data_s
 }
 
 // Functions that writes log into our DB.
-exports.updateLOG = function(log_id, uid, mid, param, approver, result, status) {
+exports.updateLOG = function(log_id, uid, mid, param, approver, result, status, cb) {
   pool.query('INSERT INTO LOG(log_id, uid, mid, param, approver, result) ' +
-             'VALUES (' + log_id + mid + uid + param + approver + result + '); ',
+             'VALUES (' + log_id + ', ' + mid + ', ' + uid  + ', \'' +  param  + '\', ' +  approver  + ', \'' +  result + '\'); ',
     function(error, results, fields){
       if(error){
         cb(error, null);
       }
-      if (results == null){
-        cb(null, null);
-      }
-      else{
-        cb(null, results);
-      }
     }
   );
-  pool.query('INSERT INTO TIME(log_id, mid, status, timestamp)' +
-             'VALUES (' + log_id + mid + status + Date.now() + ');' ,
+  pool.query('INSERT INTO TIME_TABLE(log, status, timestamp)' +
+             'VALUES (' + log_id  + ', \'' +  status  + '\', ' +  Date.now() + ');' ,
       function(error, results, fileds){
         if(error){
           cb(error,null);
-        }
-        if (results == null){
-          cb(null, null);
         }
         else {
           cb(null, results);

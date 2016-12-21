@@ -217,7 +217,7 @@ export default class MainPanel extends React.Component {
       parameters.push(this.state.slatime_field);
     }
   if (this.state.runname){
-      parameters.push(this.state.runname);
+      parameters.push(this.state.runname_field);
     }
   if (this.state.groupnum){
       parameters.push(this.state.groupnum_field);
