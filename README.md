@@ -10,5 +10,3 @@
 if everything good, you will get:
 1. **Example app listening on port 3000**
 2. The exact window you saw in the last presentation.
-
-NOTE: ALWAY REMEMBER TO RUN *'npm install new_packge_name --save'* WHEN INSTALLING NEW PACKAGE!!!
